@@ -9411,26 +9411,6 @@ Search.appendIndex(
             "summary": "Class\u0020Settings.",
             "url": "classes/MetaFox-Platform-Facades-Settings.html"
         },                {
-            "fqsen": "\\check_connect\u0028\u0029",
-            "name": "check_connect",
-            "summary": "",
-            "url": "namespaces/default.html#function_check_connect"
-        },                {
-            "fqsen": "\\check_connect_s3\u0028\u0029",
-            "name": "check_connect_s3",
-            "summary": "",
-            "url": "namespaces/default.html#function_check_connect_s3"
-        },                {
-            "fqsen": "\\send_mail\u0028\u0029",
-            "name": "send_mail",
-            "summary": "",
-            "url": "namespaces/default.html#function_send_mail"
-        },                {
-            "fqsen": "\\graphql_error\u0028\u0029",
-            "name": "graphql_error",
-            "summary": "",
-            "url": "namespaces/default.html#function_graphql_error"
-        },                {
             "fqsen": "\\localCacheStore\u0028\u0029",
             "name": "localCacheStore",
             "summary": "In\u0020order\u0020to\u0020categorize\u0020cache\u0020high\u0020load\u0020data\u0020to\u0020local\ndo\u0020not\u0020push\u0020all\u0020cache\u0020to\u0020network\u0020base\u0020cache\u0020system\u0020because\u0020it\u0027s\u0020phrase\u0020issue\u0020of\u00201Gb\/s\u0020network\u0020traffic.",
@@ -9445,41 +9425,6 @@ Search.appendIndex(
             "name": "user",
             "summary": "",
             "url": "namespaces/default.html#function_user"
-        },                {
-            "fqsen": "\\array_fillable\u0028\u0029",
-            "name": "array_fillable",
-            "summary": "",
-            "url": "namespaces/default.html#function_array_fillable"
-        },                {
-            "fqsen": "\\parse_input\u0028\u0029",
-            "name": "parse_input",
-            "summary": "",
-            "url": "namespaces/default.html#function_parse_input"
-        },                {
-            "fqsen": "\\parse_output\u0028\u0029",
-            "name": "parse_output",
-            "summary": "",
-            "url": "namespaces/default.html#function_parse_output"
-        },                {
-            "fqsen": "\\ban_word\u0028\u0029",
-            "name": "ban_word",
-            "summary": "",
-            "url": "namespaces/default.html#function_ban_word"
-        },                {
-            "fqsen": "\\bbcode\u0028\u0029",
-            "name": "bbcode",
-            "summary": "",
-            "url": "namespaces/default.html#function_bbcode"
-        },                {
-            "fqsen": "\\random_value\u0028\u0029",
-            "name": "random_value",
-            "summary": "",
-            "url": "namespaces/default.html#function_random_value"
-        },                {
-            "fqsen": "\\random_privacy\u0028\u0029",
-            "name": "random_privacy",
-            "summary": "",
-            "url": "namespaces/default.html#function_random_privacy"
         },                {
             "fqsen": "\\upload\u0028\u0029",
             "name": "upload",
@@ -9553,18 +9498,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\is_running_unit_test\u0028\u0029",
             "name": "is_running_unit_test",
-            "summary": "",
+            "summary": "Check\u0020is\u0020in\u0020CI\u0020or\u0020unitest\u0020mode",
             "url": "namespaces/default.html#function_is_running_unit_test"
         },                {
             "fqsen": "\\fox_get_contents\u0028\u0029",
             "name": "fox_get_contents",
             "summary": "",
             "url": "namespaces/default.html#function_fox_get_contents"
-        },                {
-            "fqsen": "\\development_mode\u0028\u0029",
-            "name": "development_mode",
-            "summary": "",
-            "url": "namespaces/default.html#function_development_mode"
         },                {
             "fqsen": "\\database_driver\u0028\u0029",
             "name": "database_driver",
@@ -9591,20 +9531,10 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/default.html#function_calculatorExpiredDay"
         },                {
-            "fqsen": "\\metaFox_event\u0028\u0029",
-            "name": "metaFox_event",
-            "summary": "",
-            "url": "namespaces/default.html#function_metaFox_event"
-        },                {
             "fqsen": "\\file_type\u0028\u0029",
             "name": "file_type",
             "summary": "",
             "url": "namespaces/default.html#function_file_type"
-        },                {
-            "fqsen": "\\hasCaptcha\u0028\u0029",
-            "name": "hasCaptcha",
-            "summary": "",
-            "url": "namespaces/default.html#function_hasCaptcha"
         },                {
             "fqsen": "\\MetaFox\\Platform\\Http\\Controllers\\Api\\ApiController",
             "name": "ApiController",
