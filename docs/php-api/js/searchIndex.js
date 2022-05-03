@@ -26,211 +26,6 @@ Search.appendIndex(
             "summary": "Interface\u0020TypeManager",
             "url": "classes/MetaFox-Activity-Contracts-TypeManager.html"
         },                {
-            "fqsen": "\\MetaFox\\Activity\\Database\\Factories\\AttachmentDataFactory",
-            "name": "AttachmentDataFactory",
-            "summary": "",
-            "url": "classes/MetaFox-Activity-Database-Factories-AttachmentDataFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\Database\\Factories\\AttachmentFactory",
-            "name": "AttachmentFactory",
-            "summary": "",
-            "url": "classes/MetaFox-Activity-Database-Factories-AttachmentFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\Database\\Factories\\FeedFactory",
-            "name": "FeedFactory",
-            "summary": "",
-            "url": "classes/MetaFox-Activity-Database-Factories-FeedFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\Database\\Factories\\HiddenFactory",
-            "name": "HiddenFactory",
-            "summary": "Class\u0020HiddenFactory.",
-            "url": "classes/MetaFox-Activity-Database-Factories-HiddenFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\Database\\Factories\\PinFactory",
-            "name": "PinFactory",
-            "summary": "Class\u0020PinFactory.",
-            "url": "classes/MetaFox-Activity-Database-Factories-PinFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\Database\\Factories\\PostFactory",
-            "name": "PostFactory",
-            "summary": "Class\u0020PostFactory.",
-            "url": "classes/MetaFox-Activity-Database-Factories-PostFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\Database\\Factories\\ShareFactory",
-            "name": "ShareFactory",
-            "summary": "",
-            "url": "classes/MetaFox-Activity-Database-Factories-ShareFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\Database\\Factories\\SnoozeFactory",
-            "name": "SnoozeFactory",
-            "summary": "Class\u0020SnoozeFactory.",
-            "url": "classes/MetaFox-Activity-Database-Factories-SnoozeFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\Database\\Factories\\SubscriptionFactory",
-            "name": "SubscriptionFactory",
-            "summary": "Class\u0020SubscriptionFactory.",
-            "url": "classes/MetaFox-Activity-Database-Factories-SubscriptionFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\Database\\Factories\\TypeFactory",
-            "name": "TypeFactory",
-            "summary": "Class\u0020TypeFactory.",
-            "url": "classes/MetaFox-Activity-Database-Factories-TypeFactory.html"
-        },                {
-            "fqsen": "\\Activity",
-            "name": "Activity",
-            "summary": "Class\u0020Activity.",
-            "url": "classes/Activity.html"
-        },                {
-            "fqsen": "\\Activity\u003A\u003AactivitySnoozeHidden\u0028\u0029",
-            "name": "activitySnoozeHidden",
-            "summary": "",
-            "url": "classes/Activity.html#method_activitySnoozeHidden"
-        },                {
-            "fqsen": "\\Activity\u003A\u003AactivityType\u0028\u0029",
-            "name": "activityType",
-            "summary": "",
-            "url": "classes/Activity.html#method_activityType"
-        },                {
-            "fqsen": "\\Activity\u003A\u003AactivityPost\u0028\u0029",
-            "name": "activityPost",
-            "summary": "",
-            "url": "classes/Activity.html#method_activityPost"
-        },                {
-            "fqsen": "\\Activity\u003A\u003AactivityAttachment\u0028\u0029",
-            "name": "activityAttachment",
-            "summary": "",
-            "url": "classes/Activity.html#method_activityAttachment"
-        },                {
-            "fqsen": "\\Activity\u003A\u003AactivityShare\u0028\u0029",
-            "name": "activityShare",
-            "summary": "",
-            "url": "classes/Activity.html#method_activityShare"
-        },                {
-            "fqsen": "\\Activity\u003A\u003AactivityPins\u0028\u0029",
-            "name": "activityPins",
-            "summary": "",
-            "url": "classes/Activity.html#method_activityPins"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\Database\\Seeders\\ActivityDatabaseSeeder",
-            "name": "ActivityDatabaseSeeder",
-            "summary": "Class\u0020ActivityDatabaseSeeder.",
-            "url": "classes/MetaFox-Activity-Database-Seeders-ActivityDatabaseSeeder.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\GraphQL\\ActivityFeedType",
-            "name": "ActivityFeedType",
-            "summary": "",
-            "url": "classes/MetaFox-Activity-GraphQL-ActivityFeedType.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\GraphQL\\ActivityHiddenType",
-            "name": "ActivityHiddenType",
-            "summary": "",
-            "url": "classes/MetaFox-Activity-GraphQL-ActivityHiddenType.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\GraphQL\\ActivityPostType",
-            "name": "ActivityPostType",
-            "summary": "",
-            "url": "classes/MetaFox-Activity-GraphQL-ActivityPostType.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\GraphQL\\ActivitySnoozeType",
-            "name": "ActivitySnoozeType",
-            "summary": "",
-            "url": "classes/MetaFox-Activity-GraphQL-ActivitySnoozeType.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\GraphQL\\ActivityStreamType",
-            "name": "ActivityStreamType",
-            "summary": "",
-            "url": "classes/MetaFox-Activity-GraphQL-ActivityStreamType.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\GraphQL\\ActivityTypeType",
-            "name": "ActivityTypeType",
-            "summary": "",
-            "url": "classes/MetaFox-Activity-GraphQL-ActivityTypeType.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\GraphQL\\Mutations\\CreateActivityPostMutation",
-            "name": "CreateActivityPostMutation",
-            "summary": "Class\u0020CreateActivityPostMutation.",
-            "url": "classes/MetaFox-Activity-GraphQL-Mutations-CreateActivityPostMutation.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\GraphQL\\Mutations\\DeleteActivityFeedMutation",
-            "name": "DeleteActivityFeedMutation",
-            "summary": "",
-            "url": "classes/MetaFox-Activity-GraphQL-Mutations-DeleteActivityFeedMutation.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\GraphQL\\Mutations\\HideActivityFeedMutation",
-            "name": "HideActivityFeedMutation",
-            "summary": "Class\u0020HideActivityFeedMutation.",
-            "url": "classes/MetaFox-Activity-GraphQL-Mutations-HideActivityFeedMutation.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\GraphQL\\Mutations\\HideAllActivityFeedMutation",
-            "name": "HideAllActivityFeedMutation",
-            "summary": "Class\u0020HideActivityFeedMutation.",
-            "url": "classes/MetaFox-Activity-GraphQL-Mutations-HideAllActivityFeedMutation.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\GraphQL\\Mutations\\SnoozeUserMutation",
-            "name": "SnoozeUserMutation",
-            "summary": "Class\u0020SnoozeUserMutation.",
-            "url": "classes/MetaFox-Activity-GraphQL-Mutations-SnoozeUserMutation.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\GraphQL\\Mutations\\UnHideActivityFeedMutation",
-            "name": "UnHideActivityFeedMutation",
-            "summary": "Class\u0020HideActivityFeedMutation.",
-            "url": "classes/MetaFox-Activity-GraphQL-Mutations-UnHideActivityFeedMutation.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\GraphQL\\Mutations\\UnHideAllActivityFeedMutation",
-            "name": "UnHideAllActivityFeedMutation",
-            "summary": "Class\u0020HideActivityFeedMutation.",
-            "url": "classes/MetaFox-Activity-GraphQL-Mutations-UnHideAllActivityFeedMutation.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\GraphQL\\Mutations\\UnSnoozeUserMutation",
-            "name": "UnSnoozeUserMutation",
-            "summary": "Class\u0020UnSnoozeUserMutation.",
-            "url": "classes/MetaFox-Activity-GraphQL-Mutations-UnSnoozeUserMutation.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\GraphQL\\Mutations\\UpdateActivityFeedMutation",
-            "name": "UpdateActivityFeedMutation",
-            "summary": "Class\u0020UpdateActivityFeedMutation.",
-            "url": "classes/MetaFox-Activity-GraphQL-Mutations-UpdateActivityFeedMutation.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\GraphQL\\Queries\\ActivityFeedQuery",
-            "name": "ActivityFeedQuery",
-            "summary": "",
-            "url": "classes/MetaFox-Activity-GraphQL-Queries-ActivityFeedQuery.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\GraphQL\\Queries\\ActivityFeedsQuery",
-            "name": "ActivityFeedsQuery",
-            "summary": "",
-            "url": "classes/MetaFox-Activity-GraphQL-Queries-ActivityFeedsQuery.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\GraphQL\\Queries\\ActivityStreamQuery",
-            "name": "ActivityStreamQuery",
-            "summary": "",
-            "url": "classes/MetaFox-Activity-GraphQL-Queries-ActivityStreamQuery.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\Http\\Controllers\\Api\\FeedController",
-            "name": "FeedController",
-            "summary": "Class\u0020CategoryController.",
-            "url": "classes/MetaFox-Activity-Http-Controllers-Api-FeedController.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\Http\\Controllers\\Api\\HiddenController",
-            "name": "HiddenController",
-            "summary": "Class\u0020CategoryController.",
-            "url": "classes/MetaFox-Activity-Http-Controllers-Api-HiddenController.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\Http\\Controllers\\Api\\PinController",
-            "name": "PinController",
-            "summary": "Class\u0020PinController.",
-            "url": "classes/MetaFox-Activity-Http-Controllers-Api-PinController.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\Http\\Controllers\\Api\\SnoozeController",
-            "name": "SnoozeController",
-            "summary": "Class\u0020CategoryController.",
-            "url": "classes/MetaFox-Activity-Http-Controllers-Api-SnoozeController.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\Http\\Controllers\\Api\\TypeAdminController",
-            "name": "TypeAdminController",
-            "summary": "Class\u0020TypeAdminController.",
-            "url": "classes/MetaFox-Activity-Http-Controllers-Api-TypeAdminController.html"
-        },                {
             "fqsen": "\\MetaFox\\Activity\\Http\\Controllers\\Api\\v1\\FeedController",
             "name": "FeedController",
             "summary": "Class\u0020FeedController.",
@@ -1066,10 +861,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/InitActivityPointTables.html"
         },                {
-            "fqsen": "\\MetaFox\\ActivityPoint\\Database\\Seeders\\ActivityPointDatabaseSeeder",
-            "name": "ActivityPointDatabaseSeeder",
+            "fqsen": "\\MetaFox\\ActivityPoint\\Http\\Controllers\\ActivityPointController",
+            "name": "ActivityPointController",
             "summary": "",
-            "url": "classes/MetaFox-ActivityPoint-Database-Seeders-ActivityPointDatabaseSeeder.html"
+            "url": "classes/MetaFox-ActivityPoint-Http-Controllers-ActivityPointController.html"
         },                {
             "fqsen": "\\MetaFox\\ActivityPoint\\Listeners\\PackageSettingListener",
             "name": "PackageSettingListener",
@@ -1106,11 +901,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CreateBackgroundStatusTables.html"
         },                {
-            "fqsen": "\\MetaFox\\BackgroundStatus\\Database\\Seeders\\BackgroundStatusDatabaseSeeder",
-            "name": "BackgroundStatusDatabaseSeeder",
-            "summary": "",
-            "url": "classes/MetaFox-BackgroundStatus-Database-Seeders-BackgroundStatusDatabaseSeeder.html"
-        },                {
             "fqsen": "\\MetaFox\\BackgroundStatus\\Http\\Controllers\\Api\\BgsCollectionController",
             "name": "BgsCollectionController",
             "summary": "Class\u0020CategoryController.",
@@ -1120,6 +910,11 @@ Search.appendIndex(
             "name": "BgsCollectionController",
             "summary": "Class\u0020BgsCollectionController.",
             "url": "classes/MetaFox-BackgroundStatus-Http-Controllers-Api-v1-BgsCollectionController.html"
+        },                {
+            "fqsen": "\\MetaFox\\BackgroundStatus\\Http\\Controllers\\BackgroundStatusController",
+            "name": "BackgroundStatusController",
+            "summary": "",
+            "url": "classes/MetaFox-BackgroundStatus-Http-Controllers-BackgroundStatusController.html"
         },                {
             "fqsen": "\\MetaFox\\BackgroundStatus\\Http\\Requests\\v1\\GetBackgroundsRequest",
             "name": "GetBackgroundsRequest",
@@ -1360,11 +1155,6 @@ Search.appendIndex(
             "name": "initCommentTagData",
             "summary": "",
             "url": "classes/InitCommentTables.html#method_initCommentTagData"
-        },                {
-            "fqsen": "\\MetaFox\\Comment\\Database\\Seeders\\CommentDatabaseSeeder",
-            "name": "CommentDatabaseSeeder",
-            "summary": "",
-            "url": "classes/MetaFox-Comment-Database-Seeders-CommentDatabaseSeeder.html"
         },                {
             "fqsen": "\\MetaFox\\Comment\\Http\\Controllers\\Api\\CommentController",
             "name": "CommentController",
@@ -1740,11 +1530,6 @@ Search.appendIndex(
             "name": "AttachmentFileTypeSeeder",
             "summary": "",
             "url": "classes/MetaFox-Core-Database-Seeders-AttachmentFileTypeSeeder.html"
-        },                {
-            "fqsen": "\\MetaFox\\Core\\Database\\Seeders\\CoreDatabaseSeeder",
-            "name": "CoreDatabaseSeeder",
-            "summary": "",
-            "url": "classes/MetaFox-Core-Database-Seeders-CoreDatabaseSeeder.html"
         },                {
             "fqsen": "\\MetaFox\\Core\\Database\\Seeders\\CountryTablesSeeder",
             "name": "CountryTablesSeeder",
@@ -3936,11 +3721,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/InitFriendRequestTables.html"
         },                {
-            "fqsen": "\\MetaFox\\Friend\\Database\\Seeders\\FriendDatabaseSeeder",
-            "name": "FriendDatabaseSeeder",
-            "summary": "",
-            "url": "classes/MetaFox-Friend-Database-Seeders-FriendDatabaseSeeder.html"
-        },                {
             "fqsen": "\\MetaFox\\Friend\\Http\\Controllers\\Api\\FriendController",
             "name": "FriendController",
             "summary": "Class\u0020CategoryController.",
@@ -4576,11 +4356,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CreateHashtagTables.html"
         },                {
-            "fqsen": "\\MetaFox\\Hashtag\\Database\\Seeders\\HashtagDatabaseSeeder",
-            "name": "HashtagDatabaseSeeder",
-            "summary": "",
-            "url": "classes/MetaFox-Hashtag-Database-Seeders-HashtagDatabaseSeeder.html"
-        },                {
             "fqsen": "\\MetaFox\\Hashtag\\Http\\Controllers\\Api\\HashtagController",
             "name": "HashtagController",
             "summary": "Class\u0020HashtagController.",
@@ -4720,11 +4495,6 @@ Search.appendIndex(
             "name": "InitLikeTables",
             "summary": "",
             "url": "classes/InitLikeTables.html"
-        },                {
-            "fqsen": "\\MetaFox\\Like\\Database\\Seeders\\LikeDatabaseSeeder",
-            "name": "LikeDatabaseSeeder",
-            "summary": "",
-            "url": "classes/MetaFox-Like-Database-Seeders-LikeDatabaseSeeder.html"
         },                {
             "fqsen": "\\MetaFox\\Like\\Http\\Controllers\\Api\\LikeController",
             "name": "LikeController",
@@ -4976,11 +4746,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/CreateMembershipTables.html"
         },                {
-            "fqsen": "\\MetaFox\\Membership\\Database\\Seeders\\MembershipDatabaseSeeder",
-            "name": "MembershipDatabaseSeeder",
-            "summary": "",
-            "url": "classes/MetaFox-Membership-Database-Seeders-MembershipDatabaseSeeder.html"
-        },                {
             "fqsen": "\\MetaFox\\Membership\\Listeners\\PackageSettingListener",
             "name": "PackageSettingListener",
             "summary": "Class\u0020BasePackageSettingListener",
@@ -5030,16 +4795,6 @@ Search.appendIndex(
             "name": "InitNotificationTables",
             "summary": "",
             "url": "classes/InitNotificationTables.html"
-        },                {
-            "fqsen": "\\MetaFox\\Notification\\Database\\Seeders\\NotificationDatabaseSeeder",
-            "name": "NotificationDatabaseSeeder",
-            "summary": "",
-            "url": "classes/MetaFox-Notification-Database-Seeders-NotificationDatabaseSeeder.html"
-        },                {
-            "fqsen": "\\MetaFox\\Notification\\Database\\Seeders\\NotificationDatabaseSeeder\u003A\u003A\u0024channels",
-            "name": "channels",
-            "summary": "",
-            "url": "classes/MetaFox-Notification-Database-Seeders-NotificationDatabaseSeeder.html#property_channels"
         },                {
             "fqsen": "\\MetaFox\\Notification\\Http\\Controllers\\Api\\NotificationController",
             "name": "NotificationController",
@@ -5376,16 +5131,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Photo.html"
         },                {
-            "fqsen": "\\MetaFox\\Photo\\Database\\Seeders\\PhotoDatabaseSeeder",
-            "name": "PhotoDatabaseSeeder",
-            "summary": "",
-            "url": "classes/MetaFox-Photo-Database-Seeders-PhotoDatabaseSeeder.html"
-        },                {
-            "fqsen": "\\MetaFox\\Photo\\Database\\Seeders\\PhotoDatabaseSeeder\u003A\u003Acategories\u0028\u0029",
-            "name": "categories",
-            "summary": "",
-            "url": "classes/MetaFox-Photo-Database-Seeders-PhotoDatabaseSeeder.html#method_categories"
-        },                {
             "fqsen": "\\MetaFox\\Photo\\Events\\CreatePhoto",
             "name": "CreatePhoto",
             "summary": "",
@@ -5405,26 +5150,6 @@ Search.appendIndex(
             "name": "response",
             "summary": "",
             "url": "classes/MetaFox-Photo-Events-CreatePhoto.html#property_response"
-        },                {
-            "fqsen": "\\MetaFox\\Photo\\GraphQL\\Mutations\\CreatePhotoMutation",
-            "name": "CreatePhotoMutation",
-            "summary": "",
-            "url": "classes/MetaFox-Photo-GraphQL-Mutations-CreatePhotoMutation.html"
-        },                {
-            "fqsen": "\\MetaFox\\Photo\\GraphQL\\PhotoType",
-            "name": "PhotoType",
-            "summary": "",
-            "url": "classes/MetaFox-Photo-GraphQL-PhotoType.html"
-        },                {
-            "fqsen": "\\MetaFox\\Photo\\GraphQL\\Queries\\PhotoQuery",
-            "name": "PhotoQuery",
-            "summary": "",
-            "url": "classes/MetaFox-Photo-GraphQL-Queries-PhotoQuery.html"
-        },                {
-            "fqsen": "\\MetaFox\\Photo\\GraphQL\\Queries\\PhotosQuery",
-            "name": "PhotosQuery",
-            "summary": "",
-            "url": "classes/MetaFox-Photo-GraphQL-Queries-PhotosQuery.html"
         },                {
             "fqsen": "\\MetaFox\\Photo\\Http\\Controllers\\Api\\AlbumController",
             "name": "AlbumController",
@@ -6181,11 +5906,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/MetaFox-Report-Database-Seeders-ReasonTableSeeder.html"
         },                {
-            "fqsen": "\\MetaFox\\Report\\Database\\Seeders\\ReportDatabaseSeeder",
-            "name": "ReportDatabaseSeeder",
-            "summary": "",
-            "url": "classes/MetaFox-Report-Database-Seeders-ReportDatabaseSeeder.html"
-        },                {
             "fqsen": "\\MetaFox\\Report\\Http\\Controllers\\Api\\ReportItemAdminController",
             "name": "ReportItemAdminController",
             "summary": "Class\u0020ReportItemAdminController.",
@@ -6600,11 +6320,6 @@ Search.appendIndex(
             "name": "CreateSavedTables",
             "summary": "",
             "url": "classes/CreateSavedTables.html"
-        },                {
-            "fqsen": "\\MetaFox\\Saved\\Database\\Seeders\\SavedDatabaseSeeder",
-            "name": "SavedDatabaseSeeder",
-            "summary": "",
-            "url": "classes/MetaFox-Saved-Database-Seeders-SavedDatabaseSeeder.html"
         },                {
             "fqsen": "\\MetaFox\\Saved\\Http\\Controllers\\Api\\SavedController",
             "name": "SavedController",
@@ -7166,10 +6881,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/StaticPageTables.html"
         },                {
-            "fqsen": "\\MetaFox\\StaticPage\\Database\\Seeders\\StaticPageDatabaseSeeder",
-            "name": "StaticPageDatabaseSeeder",
+            "fqsen": "\\MetaFox\\StaticPage\\Http\\Controllers\\StaticPageController",
+            "name": "StaticPageController",
             "summary": "",
-            "url": "classes/MetaFox-StaticPage-Database-Seeders-StaticPageDatabaseSeeder.html"
+            "url": "classes/MetaFox-StaticPage-Http-Controllers-StaticPageController.html"
         },                {
             "fqsen": "\\MetaFox\\StaticPage\\Listeners\\PackageSettingListener",
             "name": "PackageSettingListener",
@@ -7205,11 +6920,6 @@ Search.appendIndex(
             "name": "InitStickerTables",
             "summary": "",
             "url": "classes/InitStickerTables.html"
-        },                {
-            "fqsen": "\\MetaFox\\Sticker\\Database\\Seeders\\StickerDatabaseSeeder",
-            "name": "StickerDatabaseSeeder",
-            "summary": "",
-            "url": "classes/MetaFox-Sticker-Database-Seeders-StickerDatabaseSeeder.html"
         },                {
             "fqsen": "\\MetaFox\\Sticker\\Http\\Controllers\\Api\\StickerSetController",
             "name": "StickerSetController",
@@ -7381,11 +7091,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/StorageTables.html"
         },                {
-            "fqsen": "\\MetaFox\\Storage\\Database\\Seeders\\StorageDatabaseSeeder",
-            "name": "StorageDatabaseSeeder",
-            "summary": "",
-            "url": "classes/MetaFox-Storage-Database-Seeders-StorageDatabaseSeeder.html"
-        },                {
             "fqsen": "\\MetaFox\\Storage\\Http\\Controllers\\Api\\StorageController",
             "name": "StorageController",
             "summary": "Class\u0020CategoryController.",
@@ -7468,468 +7173,38 @@ Search.appendIndex(
         },                {
             "fqsen": "\\MetaFox\\User\\Contracts\\PermissionRegistrar",
             "name": "PermissionRegistrar",
-            "summary": "",
+            "summary": "Interface\u0020PermissionRegistrar.",
             "url": "classes/MetaFox-User-Contracts-PermissionRegistrar.html"
         },                {
             "fqsen": "\\MetaFox\\User\\Contracts\\PlatformPermission",
             "name": "PlatformPermission",
-            "summary": "",
+            "summary": "Interface\u0020PlatformPermission.",
             "url": "classes/MetaFox-User-Contracts-PlatformPermission.html"
         },                {
             "fqsen": "\\MetaFox\\User\\Contracts\\RoleHasValuePermission",
             "name": "RoleHasValuePermission",
-            "summary": "",
+            "summary": "Interface\u0020RoleHasValuePermission.",
             "url": "classes/MetaFox-User-Contracts-RoleHasValuePermission.html"
         },                {
             "fqsen": "\\MetaFox\\User\\Contracts\\Support\\PrivacyForSettingInterface",
             "name": "PrivacyForSettingInterface",
-            "summary": "",
+            "summary": "Interface\u0020PrivacyForSettingInterface.",
             "url": "classes/MetaFox-User-Contracts-Support-PrivacyForSettingInterface.html"
         },                {
             "fqsen": "\\MetaFox\\User\\Contracts\\Support\\UserValueInterface",
             "name": "UserValueInterface",
-            "summary": "",
+            "summary": "Interface\u0020UserValueInterface.",
             "url": "classes/MetaFox-User-Contracts-Support-UserValueInterface.html"
         },                {
             "fqsen": "\\MetaFox\\User\\Contracts\\UserBlockedSupportContract",
             "name": "UserBlockedSupportContract",
-            "summary": "",
+            "summary": "Interface\u0020UserBlockedSupportContract.",
             "url": "classes/MetaFox-User-Contracts-UserBlockedSupportContract.html"
         },                {
             "fqsen": "\\MetaFox\\User\\Contracts\\UserContract",
             "name": "UserContract",
-            "summary": "",
+            "summary": "Interface\u0020UserContract.",
             "url": "classes/MetaFox-User-Contracts-UserContract.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Contracts\\UserHasValuePermission",
-            "name": "UserHasValuePermission",
-            "summary": "",
-            "url": "classes/MetaFox-User-Contracts-UserHasValuePermission.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Factories\\CancelFeedbackFactory",
-            "name": "CancelFeedbackFactory",
-            "summary": "",
-            "url": "classes/MetaFox-User-Database-Factories-CancelFeedbackFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Factories\\CancelReasonFactory",
-            "name": "CancelReasonFactory",
-            "summary": "",
-            "url": "classes/MetaFox-User-Database-Factories-CancelReasonFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Factories\\MultiFactorTokenFactory",
-            "name": "MultiFactorTokenFactory",
-            "summary": "",
-            "url": "classes/MetaFox-User-Database-Factories-MultiFactorTokenFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Factories\\PermissionFactory",
-            "name": "PermissionFactory",
-            "summary": "",
-            "url": "classes/MetaFox-User-Database-Factories-PermissionFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Factories\\RoleFactory",
-            "name": "RoleFactory",
-            "summary": "",
-            "url": "classes/MetaFox-User-Database-Factories-RoleFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Factories\\SocialAccountFactory",
-            "name": "SocialAccountFactory",
-            "summary": "Class\u0020SocialAccountFactory.",
-            "url": "classes/MetaFox-User-Database-Factories-SocialAccountFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Factories\\UserActivityFactory",
-            "name": "UserActivityFactory",
-            "summary": "",
-            "url": "classes/MetaFox-User-Database-Factories-UserActivityFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Factories\\UserBanFactory",
-            "name": "UserBanFactory",
-            "summary": "",
-            "url": "classes/MetaFox-User-Database-Factories-UserBanFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Factories\\UserBlockedFactory",
-            "name": "UserBlockedFactory",
-            "summary": "",
-            "url": "classes/MetaFox-User-Database-Factories-UserBlockedFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Factories\\UserEntityFactory",
-            "name": "UserEntityFactory",
-            "summary": "",
-            "url": "classes/MetaFox-User-Database-Factories-UserEntityFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Factories\\UserFactory",
-            "name": "UserFactory",
-            "summary": "Class\u0020UserFactory.",
-            "url": "classes/MetaFox-User-Database-Factories-UserFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Factories\\UserFactory\u003A\u003AgenerateUserName\u0028\u0029",
-            "name": "generateUserName",
-            "summary": "",
-            "url": "classes/MetaFox-User-Database-Factories-UserFactory.html#method_generateUserName"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Factories\\UserPrivacyFactory",
-            "name": "UserPrivacyFactory",
-            "summary": "",
-            "url": "classes/MetaFox-User-Database-Factories-UserPrivacyFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Factories\\UserPrivacyResourceFactory",
-            "name": "UserPrivacyResourceFactory",
-            "summary": "",
-            "url": "classes/MetaFox-User-Database-Factories-UserPrivacyResourceFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Factories\\UserPrivacyTypeFactory",
-            "name": "UserPrivacyTypeFactory",
-            "summary": "",
-            "url": "classes/MetaFox-User-Database-Factories-UserPrivacyTypeFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Factories\\UserProfileFactory",
-            "name": "UserProfileFactory",
-            "summary": "",
-            "url": "classes/MetaFox-User-Database-Factories-UserProfileFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Factories\\UserPromotionFactory",
-            "name": "UserPromotionFactory",
-            "summary": "",
-            "url": "classes/MetaFox-User-Database-Factories-UserPromotionFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Factories\\UserRelationDataFactory",
-            "name": "UserRelationDataFactory",
-            "summary": "",
-            "url": "classes/MetaFox-User-Database-Factories-UserRelationDataFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Factories\\UserRelationFactory",
-            "name": "UserRelationFactory",
-            "summary": "",
-            "url": "classes/MetaFox-User-Database-Factories-UserRelationFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Factories\\UserShortcutFactory",
-            "name": "UserShortcutFactory",
-            "summary": "",
-            "url": "classes/MetaFox-User-Database-Factories-UserShortcutFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Factories\\UserValueFactory",
-            "name": "UserValueFactory",
-            "summary": "",
-            "url": "classes/MetaFox-User-Database-Factories-UserValueFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Factories\\UserVerifyErrorFactory",
-            "name": "UserVerifyErrorFactory",
-            "summary": "",
-            "url": "classes/MetaFox-User-Database-Factories-UserVerifyErrorFactory.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Factories\\UserVerifyFactory",
-            "name": "UserVerifyFactory",
-            "summary": "",
-            "url": "classes/MetaFox-User-Database-Factories-UserVerifyFactory.html"
-        },                {
-            "fqsen": "\\CreateUserProfilesTable",
-            "name": "CreateUserProfilesTable",
-            "summary": "",
-            "url": "classes/CreateUserProfilesTable.html"
-        },                {
-            "fqsen": "\\CreatePermissionTables",
-            "name": "CreatePermissionTables",
-            "summary": "",
-            "url": "classes/CreatePermissionTables.html"
-        },                {
-            "fqsen": "\\User",
-            "name": "User",
-            "summary": "",
-            "url": "classes/User.html"
-        },                {
-            "fqsen": "\\User\u003A\u003AcreateUserEntitiesTable\u0028\u0029",
-            "name": "createUserEntitiesTable",
-            "summary": "",
-            "url": "classes/User.html#method_createUserEntitiesTable"
-        },                {
-            "fqsen": "\\User\u003A\u003AcreateUserActivitiesTable\u0028\u0029",
-            "name": "createUserActivitiesTable",
-            "summary": "",
-            "url": "classes/User.html#method_createUserActivitiesTable"
-        },                {
-            "fqsen": "\\User\u003A\u003AcreateUserPrivacyTypeTable\u0028\u0029",
-            "name": "createUserPrivacyTypeTable",
-            "summary": "",
-            "url": "classes/User.html#method_createUserPrivacyTypeTable"
-        },                {
-            "fqsen": "\\User\u003A\u003AcreateUserPrivacyResourceTable\u0028\u0029",
-            "name": "createUserPrivacyResourceTable",
-            "summary": "",
-            "url": "classes/User.html#method_createUserPrivacyResourceTable"
-        },                {
-            "fqsen": "\\User\u003A\u003AcreateUserPrivacyValueTable\u0028\u0029",
-            "name": "createUserPrivacyValueTable",
-            "summary": "",
-            "url": "classes/User.html#method_createUserPrivacyValueTable"
-        },                {
-            "fqsen": "\\User\u003A\u003AcreateUserDeleteReasonTable\u0028\u0029",
-            "name": "createUserDeleteReasonTable",
-            "summary": "",
-            "url": "classes/User.html#method_createUserDeleteReasonTable"
-        },                {
-            "fqsen": "\\User\u003A\u003AcreateUserDeleteFeedbackTable\u0028\u0029",
-            "name": "createUserDeleteFeedbackTable",
-            "summary": "",
-            "url": "classes/User.html#method_createUserDeleteFeedbackTable"
-        },                {
-            "fqsen": "\\User\u003A\u003AcreateUserValueTable\u0028\u0029",
-            "name": "createUserValueTable",
-            "summary": "",
-            "url": "classes/User.html#method_createUserValueTable"
-        },                {
-            "fqsen": "\\User\u003A\u003AcreateUserBlockedTable\u0028\u0029",
-            "name": "createUserBlockedTable",
-            "summary": "",
-            "url": "classes/User.html#method_createUserBlockedTable"
-        },                {
-            "fqsen": "\\User\u003A\u003AcreateUserVerifyErrorTable\u0028\u0029",
-            "name": "createUserVerifyErrorTable",
-            "summary": "",
-            "url": "classes/User.html#method_createUserVerifyErrorTable"
-        },                {
-            "fqsen": "\\User\u003A\u003AcreateUserVerifyTable\u0028\u0029",
-            "name": "createUserVerifyTable",
-            "summary": "",
-            "url": "classes/User.html#method_createUserVerifyTable"
-        },                {
-            "fqsen": "\\User\u003A\u003AcreateMultiFactorTokenTable\u0028\u0029",
-            "name": "createMultiFactorTokenTable",
-            "summary": "",
-            "url": "classes/User.html#method_createMultiFactorTokenTable"
-        },                {
-            "fqsen": "\\User\u003A\u003AcreateUserRelationTables\u0028\u0029",
-            "name": "createUserRelationTables",
-            "summary": "",
-            "url": "classes/User.html#method_createUserRelationTables"
-        },                {
-            "fqsen": "\\User\u003A\u003AcreatePromotionTable\u0028\u0029",
-            "name": "createPromotionTable",
-            "summary": "",
-            "url": "classes/User.html#method_createPromotionTable"
-        },                {
-            "fqsen": "\\User\u003A\u003AcreateSocialAccountTable\u0028\u0029",
-            "name": "createSocialAccountTable",
-            "summary": "",
-            "url": "classes/User.html#method_createSocialAccountTable"
-        },                {
-            "fqsen": "\\User\u003A\u003AcreateUserBanTable\u0028\u0029",
-            "name": "createUserBanTable",
-            "summary": "",
-            "url": "classes/User.html#method_createUserBanTable"
-        },                {
-            "fqsen": "\\User\u003A\u003AcreateUserBanFilterTable\u0028\u0029",
-            "name": "createUserBanFilterTable",
-            "summary": "",
-            "url": "classes/User.html#method_createUserBanFilterTable"
-        },                {
-            "fqsen": "\\User\u003A\u003AcreateUserShortcutTable\u0028\u0029",
-            "name": "createUserShortcutTable",
-            "summary": "",
-            "url": "classes/User.html#method_createUserShortcutTable"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Seeders\\AuthPassportTableSeeder",
-            "name": "AuthPassportTableSeeder",
-            "summary": "",
-            "url": "classes/MetaFox-User-Database-Seeders-AuthPassportTableSeeder.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Seeders\\AuthRoleTableSeeder",
-            "name": "AuthRoleTableSeeder",
-            "summary": "",
-            "url": "classes/MetaFox-User-Database-Seeders-AuthRoleTableSeeder.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Seeders\\CancelReasonTableSeeder",
-            "name": "CancelReasonTableSeeder",
-            "summary": "",
-            "url": "classes/MetaFox-User-Database-Seeders-CancelReasonTableSeeder.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Database\\Seeders\\UserDatabaseSeeder",
-            "name": "UserDatabaseSeeder",
-            "summary": "Class\u0020UserDatabaseSeeder.",
-            "url": "classes/MetaFox-User-Database-Seeders-UserDatabaseSeeder.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\GraphQL\\Mutations\\CreateUserMutation",
-            "name": "CreateUserMutation",
-            "summary": "",
-            "url": "classes/MetaFox-User-GraphQL-Mutations-CreateUserMutation.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\GraphQL\\Mutations\\DeleteUserMutation",
-            "name": "DeleteUserMutation",
-            "summary": "",
-            "url": "classes/MetaFox-User-GraphQL-Mutations-DeleteUserMutation.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\GraphQL\\Mutations\\UpdateUserMutation",
-            "name": "UpdateUserMutation",
-            "summary": "",
-            "url": "classes/MetaFox-User-GraphQL-Mutations-UpdateUserMutation.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\GraphQL\\Mutations\\UserLoginMutation",
-            "name": "UserLoginMutation",
-            "summary": "",
-            "url": "classes/MetaFox-User-GraphQL-Mutations-UserLoginMutation.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\GraphQL\\Queries\\UserQuery",
-            "name": "UserQuery",
-            "summary": "",
-            "url": "classes/MetaFox-User-GraphQL-Queries-UserQuery.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\GraphQL\\Queries\\UsersQuery",
-            "name": "UsersQuery",
-            "summary": "",
-            "url": "classes/MetaFox-User-GraphQL-Queries-UsersQuery.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\GraphQL\\Types\\UserEntityType",
-            "name": "UserEntityType",
-            "summary": "",
-            "url": "classes/MetaFox-User-GraphQL-Types-UserEntityType.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\GraphQL\\Types\\UserLoginType",
-            "name": "UserLoginType",
-            "summary": "",
-            "url": "classes/MetaFox-User-GraphQL-Types-UserLoginType.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\GraphQL\\Types\\UserProfileType",
-            "name": "UserProfileType",
-            "summary": "",
-            "url": "classes/MetaFox-User-GraphQL-Types-UserProfileType.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\GraphQL\\Types\\UserType",
-            "name": "UserType",
-            "summary": "",
-            "url": "classes/MetaFox-User-GraphQL-Types-UserType.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\AccountController",
-            "name": "AccountController",
-            "summary": "Class\u0020AccountController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-AccountController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\CancelFeedbackAdminController",
-            "name": "CancelFeedbackAdminController",
-            "summary": "Class\u0020CancelFeedbackAdminController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-CancelFeedbackAdminController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\CancelReasonAdminController",
-            "name": "CancelReasonAdminController",
-            "summary": "Class\u0020CancelReasonAdminController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-CancelReasonAdminController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\PermissionAdminController",
-            "name": "PermissionAdminController",
-            "summary": "Class\u0020PermissionAdminController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-PermissionAdminController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\PermissionController",
-            "name": "PermissionController",
-            "summary": "Class\u0020CategoryController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-PermissionController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\RoleAdminController",
-            "name": "RoleAdminController",
-            "summary": "Class\u0020RoleAdminController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-RoleAdminController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\RoleController",
-            "name": "RoleController",
-            "summary": "Class\u0020RoleController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-RoleController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\SocialAccountController",
-            "name": "SocialAccountController",
-            "summary": "Class\u0020CategoryController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-SocialAccountController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\UserAdminController",
-            "name": "UserAdminController",
-            "summary": "Class\u0020UserAdminController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-UserAdminController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\UserController",
-            "name": "UserController",
-            "summary": "Class\u0020UserController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-UserController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\UserPromotionAdminController",
-            "name": "UserPromotionAdminController",
-            "summary": "Class\u0020UserPromotionAdminController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-UserPromotionAdminController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\UserRelationAdminController",
-            "name": "UserRelationAdminController",
-            "summary": "Class\u0020UserRelationAdminController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-UserRelationAdminController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\UserShortcutController",
-            "name": "UserShortcutController",
-            "summary": "Class\u0020UserShortcutController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-UserShortcutController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\v1\\AccountController",
-            "name": "AccountController",
-            "summary": "",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-v1-AccountController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\v1\\CancelFeedbackAdminController",
-            "name": "CancelFeedbackAdminController",
-            "summary": "Class\u0020CancelFeedbackAdminController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-v1-CancelFeedbackAdminController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\v1\\CancelReasonAdminController",
-            "name": "CancelReasonAdminController",
-            "summary": "Class\u0020CancelReasonAdminController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-v1-CancelReasonAdminController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\v1\\PermissionAdminController",
-            "name": "PermissionAdminController",
-            "summary": "Class\u0020PermissionAdminController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-v1-PermissionAdminController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\v1\\PermissionController",
-            "name": "PermissionController",
-            "summary": "Class\u0020PermissionController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-v1-PermissionController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\v1\\RoleAdminController",
-            "name": "RoleAdminController",
-            "summary": "Class\u0020RoleAdminController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-v1-RoleAdminController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\v1\\RoleController",
-            "name": "RoleController",
-            "summary": "Class\u0020RoleController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-v1-RoleController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\v1\\SocialAccountController",
-            "name": "SocialAccountController",
-            "summary": "Class\u0020SocialAccountController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-v1-SocialAccountController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\v1\\SocialAccountController\u003A\u003A\u0024userRepository",
-            "name": "userRepository",
-            "summary": "",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-v1-SocialAccountController.html#property_userRepository"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\v1\\UserAdminController",
-            "name": "UserAdminController",
-            "summary": "Class\u0020UserAdminController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-v1-UserAdminController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\v1\\UserController",
-            "name": "UserController",
-            "summary": "Class\u0020UserController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-v1-UserController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\v1\\UserPromotionAdminController",
-            "name": "UserPromotionAdminController",
-            "summary": "Class\u0020UserPromotionAdminController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-v1-UserPromotionAdminController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\v1\\UserRelationAdminController",
-            "name": "UserRelationAdminController",
-            "summary": "Class\u0020UserRelationAdminController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-v1-UserRelationAdminController.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api\\v1\\UserShortcutController",
-            "name": "UserShortcutController",
-            "summary": "Class\u0020UserShortcutController.",
-            "url": "classes/MetaFox-User-Http-Controllers-Api-v1-UserShortcutController.html"
         },                {
             "fqsen": "\\MetaFox\\User\\Http\\Requests\\ForgotPasswordRequest",
             "name": "ForgotPasswordRequest",
@@ -8790,11 +8065,6 @@ Search.appendIndex(
             "name": "PackageInstalledListener",
             "summary": "handle\u0020package\u0020installed",
             "url": "classes/MetaFox-User-Listeners-PackageInstalledListener.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\Listeners\\PackageSettingListener",
-            "name": "PackageSettingListener",
-            "summary": "Class\u0020PackageSettingListener.",
-            "url": "classes/MetaFox-User-Listeners-PackageSettingListener.html"
         },                {
             "fqsen": "\\MetaFox\\User\\Listeners\\PrivacyForSetting",
             "name": "PrivacyForSetting",
@@ -10141,21 +9411,6 @@ Search.appendIndex(
             "summary": "Class\u0020Settings.",
             "url": "classes/MetaFox-Platform-Facades-Settings.html"
         },                {
-            "fqsen": "\\MetaFox\\Platform\\GraphQL\\Interfaces\\LocationInterface",
-            "name": "LocationInterface",
-            "summary": "Class\u0020LocationInterface",
-            "url": "classes/MetaFox-Platform-GraphQL-Interfaces-LocationInterface.html"
-        },                {
-            "fqsen": "\\MetaFox\\Platform\\GraphQL\\Interfaces\\TimestampInterface",
-            "name": "TimestampInterface",
-            "summary": "Class\u0020TimestampInterface",
-            "url": "classes/MetaFox-Platform-GraphQL-Interfaces-TimestampInterface.html"
-        },                {
-            "fqsen": "\\MetaFox\\Platform\\GraphQL\\Middleware\\ResolvePage",
-            "name": "ResolvePage",
-            "summary": "",
-            "url": "classes/MetaFox-Platform-GraphQL-Middleware-ResolvePage.html"
-        },                {
             "fqsen": "\\check_connect\u0028\u0029",
             "name": "check_connect",
             "summary": "",
@@ -10563,7 +9818,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\MetaFox\\Platform\\PackageManager",
             "name": "PackageManager",
-            "summary": "Class\u0020PackageManager",
+            "summary": "Class\u0020PackageManager.",
             "url": "classes/MetaFox-Platform-PackageManager.html"
         },                {
             "fqsen": "\\MetaFox\\Platform\\Providers\\Locale\\TranslationServiceProvider",
@@ -11716,21 +10971,6 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/metafox-activity-database-seeders.html"
         },                {
-            "fqsen": "\\MetaFox\\Activity\\GraphQL",
-            "name": "GraphQL",
-            "summary": "",
-            "url": "namespaces/metafox-activity-graphql.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\GraphQL\\Mutations",
-            "name": "Mutations",
-            "summary": "",
-            "url": "namespaces/metafox-activity-graphql-mutations.html"
-        },                {
-            "fqsen": "\\MetaFox\\Activity\\GraphQL\\Queries",
-            "name": "Queries",
-            "summary": "",
-            "url": "namespaces/metafox-activity-graphql-queries.html"
-        },                {
             "fqsen": "\\MetaFox\\Activity\\Http\\Controllers\\Api",
             "name": "Api",
             "summary": "",
@@ -11931,6 +11171,16 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/metafox-activitypoint.html"
         },                {
+            "fqsen": "\\MetaFox\\ActivityPoint\\Http\\Controllers",
+            "name": "Controllers",
+            "summary": "",
+            "url": "namespaces/metafox-activitypoint-http-controllers.html"
+        },                {
+            "fqsen": "\\MetaFox\\ActivityPoint\\Http",
+            "name": "Http",
+            "summary": "",
+            "url": "namespaces/metafox-activitypoint-http.html"
+        },                {
             "fqsen": "\\MetaFox\\ActivityPoint\\Listeners",
             "name": "Listeners",
             "summary": "",
@@ -11966,6 +11216,11 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/metafox-backgroundstatus-http-controllers-api.html"
         },                {
+            "fqsen": "\\MetaFox\\BackgroundStatus\\Http\\Controllers\\Api\\v1",
+            "name": "v1",
+            "summary": "",
+            "url": "namespaces/metafox-backgroundstatus-http-controllers-api-v1.html"
+        },                {
             "fqsen": "\\MetaFox\\BackgroundStatus\\Http\\Controllers",
             "name": "Controllers",
             "summary": "",
@@ -11975,11 +11230,6 @@ Search.appendIndex(
             "name": "Http",
             "summary": "",
             "url": "namespaces/metafox-backgroundstatus-http.html"
-        },                {
-            "fqsen": "\\MetaFox\\BackgroundStatus\\Http\\Controllers\\Api\\v1",
-            "name": "v1",
-            "summary": "",
-            "url": "namespaces/metafox-backgroundstatus-http-controllers-api-v1.html"
         },                {
             "fqsen": "\\MetaFox\\BackgroundStatus\\Http\\Requests\\v1",
             "name": "v1",
@@ -13266,21 +12516,6 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/metafox-photo-events.html"
         },                {
-            "fqsen": "\\MetaFox\\Photo\\GraphQL\\Mutations",
-            "name": "Mutations",
-            "summary": "",
-            "url": "namespaces/metafox-photo-graphql-mutations.html"
-        },                {
-            "fqsen": "\\MetaFox\\Photo\\GraphQL",
-            "name": "GraphQL",
-            "summary": "",
-            "url": "namespaces/metafox-photo-graphql.html"
-        },                {
-            "fqsen": "\\MetaFox\\Photo\\GraphQL\\Queries",
-            "name": "Queries",
-            "summary": "",
-            "url": "namespaces/metafox-photo-graphql-queries.html"
-        },                {
             "fqsen": "\\MetaFox\\Photo\\Http\\Controllers\\Api",
             "name": "Api",
             "summary": "",
@@ -13921,6 +13156,16 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/metafox-staticpage.html"
         },                {
+            "fqsen": "\\MetaFox\\StaticPage\\Http\\Controllers",
+            "name": "Controllers",
+            "summary": "",
+            "url": "namespaces/metafox-staticpage-http-controllers.html"
+        },                {
+            "fqsen": "\\MetaFox\\StaticPage\\Http",
+            "name": "Http",
+            "summary": "",
+            "url": "namespaces/metafox-staticpage-http.html"
+        },                {
             "fqsen": "\\MetaFox\\StaticPage\\Listeners",
             "name": "Listeners",
             "summary": "",
@@ -14185,26 +13430,6 @@ Search.appendIndex(
             "name": "Seeders",
             "summary": "",
             "url": "namespaces/metafox-user-database-seeders.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\GraphQL\\Mutations",
-            "name": "Mutations",
-            "summary": "",
-            "url": "namespaces/metafox-user-graphql-mutations.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\GraphQL",
-            "name": "GraphQL",
-            "summary": "",
-            "url": "namespaces/metafox-user-graphql.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\GraphQL\\Queries",
-            "name": "Queries",
-            "summary": "",
-            "url": "namespaces/metafox-user-graphql-queries.html"
-        },                {
-            "fqsen": "\\MetaFox\\User\\GraphQL\\Types",
-            "name": "Types",
-            "summary": "",
-            "url": "namespaces/metafox-user-graphql-types.html"
         },                {
             "fqsen": "\\MetaFox\\User\\Http\\Controllers\\Api",
             "name": "Api",
@@ -14625,21 +13850,6 @@ Search.appendIndex(
             "name": "Facades",
             "summary": "",
             "url": "namespaces/metafox-platform-facades.html"
-        },                {
-            "fqsen": "\\MetaFox\\Platform\\GraphQL\\Interfaces",
-            "name": "Interfaces",
-            "summary": "",
-            "url": "namespaces/metafox-platform-graphql-interfaces.html"
-        },                {
-            "fqsen": "\\MetaFox\\Platform\\GraphQL",
-            "name": "GraphQL",
-            "summary": "",
-            "url": "namespaces/metafox-platform-graphql.html"
-        },                {
-            "fqsen": "\\MetaFox\\Platform\\GraphQL\\Middleware",
-            "name": "Middleware",
-            "summary": "",
-            "url": "namespaces/metafox-platform-graphql-middleware.html"
         },                {
             "fqsen": "\\MetaFox\\Platform\\Http\\Controllers\\Api",
             "name": "Api",
