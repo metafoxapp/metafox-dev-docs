@@ -9883,7 +9883,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\MetaFox\\Platform\\Rules\\ResourceNameRule",
             "name": "ResourceNameRule",
-            "summary": "Class\u0020ResourceNameRule",
+            "summary": "Class\u0020ResourceNameRule.",
             "url": "classes/MetaFox-Platform-Rules-ResourceNameRule.html"
         },                {
             "fqsen": "\\MetaFox\\Platform\\Rules\\ResourceNameRule\u003A\u003A\u0024minLength",
