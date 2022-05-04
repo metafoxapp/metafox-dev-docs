@@ -8873,7 +8873,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\MetaFox\\Platform\\Contracts\\Content",
             "name": "Content",
-            "summary": "Interface\u0020Content",
+            "summary": "Interface\u0020Content.",
             "url": "classes/MetaFox-Platform-Contracts-Content.html"
         },                {
             "fqsen": "\\MetaFox\\Platform\\Contracts\\DataPrivacy\\UserDataInterface",
