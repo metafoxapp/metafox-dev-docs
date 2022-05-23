@@ -1,55 +1,19 @@
 ---
 name: Example App
-menu: Example
-route: /example/
+route: /example-app/
 ---
 
-# Sample Notes app
+## Introduce
 
-> In this section we create new package "note" of company `company`. The Notes app will allow users to post notes and sharing with others users.
+In this section we create new package `note` of company `company`. The Notes app will allow users to post notes and sharing with others users.
+
+- Allows user sharing note, including attachments, privacy.
+- Configure settings, includes title, description, tags, category, etc.
+- Configure permissions, admin assigns permission based on user roles.
+- View notes of user's friends on thier activity streams.
+- Geting notifications when others comment, like user notes.
 
 ## Create New App
-
-**Frontend**
-In other create new app skeleton for Frontend, you can open Terminal, go to the source folder of Frontend and run the following command:
-
-```bash
-yarn metafox create-new-app --package=@company/note --item=note
-
-```
-
-You will see that the default skeleton for Notes app will be generated as below:
-
-```text
-packages/
-  company/
-    note/
-      package.json
-      tsconfig.json
-      types.ts: define typings
-      index.tsx: general export
-      module.d.ts: integrate typing
-      actions/: define actions
-        noteItemActions.tsx
-      sagas/: define redux sagas actions
-        note.tsx
-      reducers/: define reducers
-        index.tsx
-      components/: define components
-      blocks/: define blocks
-        BrowseNotes/
-          Block.tsx
-       ProfileNotes/
-          Block.tsx
-       ViewNote/
-          Block.tsx
-      pages/: define pages
-        NoteHome/
-          Page.tsx
-          layouts.json
-
-
-```
 
 **Backend**
 
@@ -71,6 +35,7 @@ packages/
         api.php
       resources/
         lang/: define supported languages
+          drivers.php: define drivers
           en/
             phrase.php: define message translation
             validation.php: define message phrases
@@ -88,7 +53,6 @@ packages/
          Resources/
         Listeners/
         Models/
-        Notifications/
         Obsevers/
         Policies/
         Providers/
@@ -98,44 +62,151 @@ packages/
           Features/: Feature test source root
 ```
 
-## Add Apis
-TBD
+**Frontend**
+
+To create skeleton for frontend, you can open Terminal, go to the source folder of ./frontend and run command:
+
+```bash
+yarn metafox create-app @company/note
+```
+
+You will see that the default skeleton for Notes app will be generated as below:
+
+```text
+packages/
+  company/
+    note/
+      package.json
+      tsconfig.json
+      types.ts: define typings
+      index.tsx: general export
+      module.d.ts: integrate typing
+      components/: define components
+      pages/: define pages
+        HomePage/
+          Page.tsx
+          layouts.json
+```
+
+## Add New Schema
+
+Access `/admincp`, Visit `Apps` -> `Installed`, Press `Code Generator` -> `Migration`. Fill schema name etc: "notes", A new migration file is created under ./src/Database/Migrations,
+file name format contain date time prefix, etc:`2022_05_23_101328_migrate_notes_table.php`.
+
+The date time prefix help framework migration scripts known execution priority.
+
+If you are not familiar with laravel migration, visit [Migrations](/backend/eloquent#migrations).
+
+In the our note app, data is focus on `notes` schemas. include follows columns.
+
+```text
+id                 : Primary key
+module_id          :
+user_id            :
+user_type          : user_type and user_id is morph columns to this note creator.
+owner_id           :
+owner_type         : owner_id and owner_type is morph columns to this note owner.
+privacy            : Who can see this note.
+total_view         :
+total_like         :
+total_comment      :
+total_reply        :
+total_share        :
+total_attachment   :
+title              : Note title
+is_approved        :
+is_draft           : Is this note post as draft ?
+is_sponsor         :
+sponsor_in_feed    :
+is_featured        : Is this note mark as featured ?
+featured_at        :
+image_path         :
+server_id          : Disk id to storage image
+tags               : Contains notes tags
+created_at         :
+updated_at         :
+```
+
+## Add New Model
+
+### Backend
+
+Access `/admincp`, Visit `Apps` -> `Installed`, Press `Code Generator` -> `Model`. Fill your package name and previous schemas, etc "notes".
+
+MetaFox generates somes classes based on what features you have choose on the previous form.
+
+** Has Repository? **
+
+Generate files for repository pattern associate with the model. the pattern based on [l5-repository](https://github.com/andersao/l5-repository)
+
+** Has Model Factory? **
+
+Generate files for [Model Factory](https://laravel.com/docs/9.x/database-testing#defining-model-factories).
+
+** Has Authorization ? **
+
+Add permissions pivot for the model based on [laravel-permission](https://spatie.be/docs/laravel-permission/v5/introduction)
+
+** Has Text Data? **
+
+Separate text to the seconds schemas, it's helpful to reduce size of main schema.
+
+** Has Category Data **
+
+Create a pivot model associate with main schema to storage relation between main schema and a category schema.
+
+** Has Tags Data **
+
+Create a pivot schema associate with main schema to storage relation between main schema and a tags data.
+
+** Has Activity Feed? **
+
+Create a pivot schema to publish each note item to activity stream.
+
+** Has Model Observer? **
+
+Create [Observer](/backend/eloquent#observers) to listen modified of main schema.
+
+> Check source base of generated code, auto generated code create skeletons to save your time only.
+
+## Add APIs
 
 ## Transalation
-TBD
 
-## WebSettings
-TBD
+The simplest way to add translation is via AdminCP, visit AdminCP -> Globalization -> Phrases -> + Add New Phrase
 
-## Resource Settings
-TBD
+Fill form input and submit.
 
 ## Add New Menu
+
 TBD
 
-## Creation Form
-TBD
+## Add Forms
 
-## Flash Messages
-TBD
-
-## Editing Form
 TBD
 
 ## Validation
+
 TBD
 
 ## Page Browsing
+
 TBD
 
 ## Page Search
+
 TBD
 
 ## Global Search
+
 TBD
 
 ## Feed Integrations
+
 TBD
 
 ## Notifications
+
 TBD
+
+## Event Listeners
