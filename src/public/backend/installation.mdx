@@ -10,13 +10,13 @@ menu: Backend
 
 On the Development environment: since we have to build MetaFox Frontend, your server will need to have at least 4G RAM as the [Recommendation for React](https://reacts.com/system-requirements/)
 
-MetaFox can be installed with docker or standalone. 
+MetaFox can be installed with docker or standalone.
 
 ## Installation with Docker
 
 MetaFox is going to support MySQL and Postgres. For Development environment, we highly recommend using Postgres
 
-The fastest way to install MetaFox Backend is via `docker-compose`. Your server will need to have `docker` and `docker-compose` installed first. Please refer to [Docker Installation Guide](https://docs.docker.com/engine/install/). 
+The fastest way to install MetaFox Backend is via `docker-compose`. Your server will need to have `docker` and `docker-compose` installed first. Please refer to [Docker Installation Guide](https://docs.docker.com/engine/install/).
 
 ### Installation Steps
 
@@ -48,24 +48,25 @@ The MetaFox should be running at "http://your_server_IP" or "http://your_domain"
 
 In this case, follow step by step to install MetaFox Backend standalone.
 
-In order for MetaFox to work properly, please check to make sure that your server meets the following software requirements: 
+In order for MetaFox to work properly, please check to make sure that your server meets the following software requirements:
+
 - OS: Linux is recommended
 - Web server: Apache or NginX
 - Database: Postgres or MySQL. Postgres is recommended
 - PHP >= 7.4
 - PHP Extensions:
-    - ext-curl
-    - ext-dom
-    - ext-json
-    - ext-pdo
-    - ext-zip
-    - sodium
-    - pcov
-    - php-redis
-    - php-imgclick
-    - php-memcached
-    - php-pgsql or php-mysql
-    - php-ffmpeg
+  - ext-curl
+  - ext-dom
+  - ext-json
+  - ext-pdo
+  - ext-zip
+  - sodium
+  - pcov
+  - php-redis
+  - php-imgclick
+  - php-memcached
+  - php-pgsql or php-mysql
+  - php-ffmpeg
 
 ### Installation Steps
 
@@ -74,8 +75,9 @@ In order for MetaFox to work properly, please check to make sure that your serve
 2. The MetaFox source includes 2 main folders: `frontend` and `backend`. You can copy all source files under `backend` folder to the web root folder fo web server.
 
 3. Go to the web root folder of web server, copy `.env.example` to `.env` and update environment variables for:
-  - Database
-  - Cache
+
+- Database
+- Cache
 
 4. Go to Terminal, go to the web root folder and run the following command:
 
@@ -96,7 +98,6 @@ If you got issues with MetaFox Installation, please open new tickets in [Client 
 - [Debug Tool](https://github.com/laravel/tinker)
 - [Storage System](https://github.com/thephpleague/flysystem)
 - [Package Management](https://github.com/nWidart/laravel-modules)
-- [Globalization](https://github.com/spatie/laravel-translatable)
 - [Message Queue](http://vladimir-yuldashev/laravel-queue-rabbitmq)
 
 ### Unit Test:

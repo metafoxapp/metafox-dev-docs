@@ -18,10 +18,6 @@ export default {
         { name: "Eloquent" },
         { name: "Event" },
         { name: "Content" },
-        {
-          name: "Appendix",
-          menus: [{ name: "Event List" }],
-        },
       ],
     },
     {

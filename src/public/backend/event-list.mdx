@@ -1,11 +1,12 @@
 ---
 name: Event List
 menu: Backend
+route: /backend/event-list
 ---
 
 # Event List
 
-Here is the list of *Events* supported on **MetaFox**
+Here is the list of _Events_ supported on **MetaFox**
 
 ```text
 +---------------------------------------------------------+------------------------------------------------------------------------+
@@ -97,7 +98,8 @@ Here is the list of *Events* supported on **MetaFox**
 ```
 
 # Event Details
-Next, we are going to dive into deeper about all supported *Events*
+
+Next, we are going to dive into deeper about all supported _Events_
 
 ## Model Events
 
@@ -167,13 +169,13 @@ These are events that were called in `EloquentModelObserver` class located at `p
 
 ### Package installed Event
 
-This *Event* will be called after running the `install` command
+This _Event_ will be called after running the `install` command
 
 - Event name: `packages.installed`
 
 ### Package updated Event
 
-This *Event* will be called after running the `updated` command
+This _Event_ will be called after running the `updated` command
 
 - Event name: `packages.updated`
 
@@ -211,7 +213,7 @@ Called when checking if user has owner privacy list
 
 ### Parse content Event
 
-Called when parsing *Content*. Can be use when converting mention, tag,.. in text
+Called when parsing _Content_. Can be use when converting mention, tag,.. in text
 
 - Event name: `core.parse_content`
 
@@ -223,7 +225,7 @@ Called when checking user has privacy member
 
 ### Total View Event
 
-Called when getting total view on a *Content* to feed
+Called when getting total view on a _Content_ to feed
 
 - Event name: `core.total_view`
 
@@ -267,7 +269,7 @@ Called when getting total view on a *Content* to feed
 
 ### Redundant Data Event
 
-Called when updating info of total comment, total like, total view,... from resource *Content* to feed
+Called when updating info of total comment, total like, total view,... from resource _Content_ to feed
 
 - Event name: `activity.redundant`
 
