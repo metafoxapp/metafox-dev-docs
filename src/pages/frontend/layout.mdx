@@ -24,123 +24,140 @@ Example template structure
 -------------------------------------------------------
 ```
 
-After that you can assign block and template using `layouts.json` file, example:
+After that you can assign block and template using `layouts.json` file
+
+Path: root_module/src/assets/pages/home.member.json 
+
+Example:
+
+```text
+Path: packages/metafox/core/src/assets/pages/home.member.json
+```
 
 ```json
 {
-  "home.member": {
-    "info": {
-      "title": "Home Page for logged in users",
-      "description": "Home Page for Logged in users"
-    },
-    "large": {
-      "templateName": "three-column-fixed",
-      "blocks": [
-        {
-          "component": "feed.block.statusComposer",
-          "slotName": "main",
-          "title": "Status Composer",
-          "key": "15t1m",
-          "blockId": "15t1m",
-          "variant": "default",
-          "blockStyle": "Contained",
-          "blockLayout": "Blocker"
+  "info": {
+    "bundle": "web",
+    "name": "home.member"
+  },
+  "large": {
+    "templateName": "three-column-fixed",
+    "blocks": [
+      {
+        "component": "feed.block.statusComposer",
+        "slotName": "main",
+        "title": "Status Composer",
+        "key": "15t1m",
+        "blockId": "15t1m",
+        "variant": "default",
+        "blockStyle": "Contained",
+        "blockLayout": "Blocker"
+      },
+      {
+        "component": "feed.block.homeFeeds",
+        "emptyPage": "core.block.no_content_with_description",
+        "slotName": "main",
+        "title": "Activity Feed",
+        "key": "mngh",
+        "blockId": "mngh",
+        "itemView": "feed.itemView.card",
+        "contentType": "feed",
+        "dataSource": {
+          "apiUrl": "/feed",
+          "apiParams": "view=latest",
+          "pagingId": "/feed"
         },
-        {
-          "component": "feed.block.homeFeeds",
-          "emptyPage": "core.block.no_content_with_description",
-          "slotName": "main",
-          "title": "Activity Feed",
-          "key": "mngh",
-          "blockId": "mngh",
-          "itemView": "feed.itemView.card",
-          "contentType": "feed",
-          "dataSource": {
-            "apiUrl": "/feed",
-            "apiParams": "view=latest",
-            "pagingId": "/feed"
-          },
-          "canLoadMore": true,
-          "canLoadSmooth": true,
-          "blockStyle": "Main Listings",
-          "gridStyle": "Feeds",
-          "blockLayout": "Main Listings",
-          "gridLayout": "Feeds"
+        "canLoadMore": true,
+        "canLoadSmooth": true,
+        "blockStyle": "Main Listings",
+        "gridStyle": "Feeds",
+        "blockLayout": "Main Listings",
+        "gridLayout": "Feeds"
+      },
+      {
+        "component": "core.block.sidebarPrimaryMenu",
+        "slotName": "side",
+        "key": "8r659",
+        "blockId": "8r659",
+        "title": "",
+        "variant": 8,
+        "displayLimit": 8,
+        "headerActions": {
+          "ml": 0,
+          "mr": 0
         },
-        {
-          "component": "core.block.sidebarPrimaryMenu",
-          "slotName": "side",
-          "key": "8r659",
-          "blockId": "8r659",
-          "title": "",
-          "variant": 8,
-          "displayLimit": 8,
-          "headerActions": {
-            "ml": 0,
-            "mr": 0
-          },
-          "blockLayout": "sidebar primary menu"
+        "blockLayout": "sidebar primary menu"
+      },
+      {
+        "component": "core.dividerBlock",
+        "slotName": "side",
+        "title": "",
+        "blockProps": {
+          "blockStyle": {}
         },
-        {
-          "component": "core.dividerBlock",
-          "slotName": "side",
-          "title": "",
-          "blockProps": {
-            "blockStyle": {}
-          },
-          "dividerVariant": "middle",
-          "key": "qlfp",
-          "blockId": "qlfp"
+        "dividerVariant": "middle",
+        "key": "qlfp",
+        "blockId": "qlfp"
+      },
+      {
+        "component": "core.block.sidebarShortcutMenu",
+        "slotName": "side",
+        "key": "2c7hu",
+        "blockId": "2c7hu",
+        "title": "Shortcuts",
+        "itemView": "shortcut.itemView.smallCard",
+        "gridLayout": "Shortcut - Menu Items",
+        "blockLayout": "sidebar shortcut",
+        "canLoadMore": 0,
+        "canLoadSmooth": true,
+        "authRequired": true,
+        "dataSource": {
+          "apiUrl": "/user/shortcut"
         },
-        {
-          "component": "core.block.sidebarShortcutMenu",
-          "slotName": "side",
-          "key": "2c7hu",
-          "blockId": "2c7hu",
-          "title": "Shortcuts",
-          "itemView": "shortcut.itemView.smallCard",
-          "gridLayout": "Shortcut - Menu Items",
-          "blockLayout": "sidebar shortcut",
-          "canLoadMore": 0,
-          "canLoadSmooth": true,
-          "authRequired": true,
-          "dataSource": {
-            "apiUrl": "/user/shortcut"
-          },
-          "pagingId": "/user/shortcut",
-          "headerActions": [
-            {
-              "as": "user.ManageShortcutButton"
-            }
-          ],
-          "emptyPageProps": {
-            "noBlock": 1
-          },
-          "emptyPage": "hide"
+        "pagingId": "/user/shortcut",
+        "headerActions": [
+          {
+            "as": "user.ManageShortcutButton"
+          }
+        ],
+        "emptyPageProps": {
+          "noBlock": 1
         },
-        {
-          "component": "announcement.block.announcementListing",
-          "slotName": "subside",
-          "title": "Announcements",
-          "key": "qea3s",
-          "blockId": "qea3s",
-          "itemProps": {
-            "mediaPlacement": "none"
-          },
-          "blockStyle": "Profile - Side Contained",
-          "blockLayout": "Side Contained"
+        "emptyPage": "hide"
+      },
+      {
+        "component": "announcement.block.announcementListing",
+        "slotName": "subside",
+        "title": "Announcements",
+        "key": "qea3s",
+        "blockId": "qea3s",
+        "itemProps": {
+          "mediaPlacement": "none"
         },
-        {
-          "component": "chatplus.block.contactsNewFeed",
-          "slotName": "subside",
-          "title": "Contacts",
-          "key": "2312ewqe",
-          "blockId": "2312ewqe",
-          "showWhen": ["truthy", "setting.chatplus.server"]
-        }
-      ]
-    },
-    "small": {}
+        "blockStyle": "Profile - Side Contained",
+        "blockLayout": "Side Contained"
+      },
+      {
+        "component": "chatplus.block.contactsNewFeed",
+        "slotName": "subside",
+        "title": "Contacts",
+        "key": "2312ewqe",
+        "blockId": "2312ewqe",
+        "showWhen": ["truthy", "setting.chatplus.server"]
+      }
+    ]
+  },
+  "small": {}
+}
+```
+
+***Notice*** info.name: declare name of json page that will use for pageName below
+
+```json
+{
+  "info": {
+    "bundle": "web",
+    "name": "home.member"
   }
 }
 ```
@@ -225,7 +242,7 @@ Export Component Naming
 
 - Item view: [resource_type].itemView.\*, etc: `blog.itemView.mainCard`, `blog.itemView.smallFlat`
 - Embed item view: [resource_type].embedView.\*, etc: `blog.embedItem.basic`
-- Form Field: form.field.[name]: etc: `form.field.text`, `form.field.upload`
+- Form Field: form.field.[name]: etc: `form.element.Text`, `form.element.Select`
 - Block Component: [module_name].block.[name], etc: `core.block.listview`
 
 ### How to detect layout variants
@@ -290,20 +307,19 @@ Determine the `max-width` of the container. The container width grows relatively
 
 `disableGutters`: If `true`, the left and right paddings are removed.
 
-##### Remove
-
-TBD
-
-##### Add new slot
-
-TBD
-
 ### Item View
 
-Item View is a component that implements UI for a single item in a listing block, etc. For example: featured members, activity feeds:
+Item View is a component that implements UI for a single item in a listing block, etc.
+
+Example blog item main card:
 
 ```tsx
-// file blog/src/components/BlogItemView.tsx
+/**
+ * @type: itemView
+ * name: blog.itemView.mainCard
+ * chunkName: blog
+ */
+
 export type BlogItemShape = {
   title: string;
   description: string;
@@ -321,69 +337,122 @@ const BlogItemView = ({ item, itemProps }: ItemViewProps<BlogItemShape>) => {
   });
 
   return (
-    <div className={classes.root}>
-      <div className={classes.outer}>
-        <Link to={to} className={classes.media}>
-          <span
-            className={classes.mediaBg}
-            style={{ backgroundImage: `url(${cover})` }}
+    <ItemView
+      wrapAs={wrapAs}
+      wrapProps={wrapProps}
+      testid="blog"
+      identity={identity}
+    >
+      <ItemMedia
+        asModal={itemLinkProps.asModal}
+        src={cover}
+        link={to}
+        alt={item.title}
+        backgroundImage
+      />
+      <ItemText>
+        <CategoryStyled
+          isMobile={isMobile}
+          data={categories}
+          sx={{ mb: { sm: 1, xs: 0 } }}
+        />
+        <ItemTitleStyled isMobile={isMobile}>
+          <FlagWrapper>
+            <FeaturedFlag variant="itemView" value={item.is_featured} />
+            <SponsorFlag
+              variant="itemView"
+              value={item.is_sponsor}
+              item={item}
+            />
+            <PendingFlag variant="itemView" value={item.is_pending} />
+          </FlagWrapper>
+          <DraftFlag
+            sx={{ fontWeight: 'normal' }}
+            value={item.is_draft && tab !== 'draft'}
+            variant="h4"
+            component="span"
           />
-        </Link>
-        <div className={classes.inner}>
-          <div className={classes.header}>
-            <Link to={to} className={classes.title}>
+          <Tooltip title={item.title} arrow>
+            <Link to={item.link} identityTracking={identity}>
               {item.title}
             </Link>
-            <ItemActionMenu state={state} handleAction={control} />
-          </div>
-          <p>{item.description}</p>
+          </Tooltip>
+        </ItemTitleStyled>
+        {itemProps.showActionMenu ? (
+          <ItemAction
+            placement={isMobile ? 'bottom-end' : 'top-end'}
+            spacing="normal"
+          >
+            <ItemActionMenu
+              identity={identity}
+              icon={'ico-dottedmore-vertical-o'}
+              state={state}
+              handleAction={handleAction}
+            />
+          </ItemAction>
+        ) : null}
+        {item.description ? (
+          <ItemSummary sx={{ my: 1 }}>
+            <HtmlViewer html={item.description} simpleTransform />
+          </ItemSummary>
+        ) : null}
+        <ItemSubInfo sx={{ color: 'text.secondary' }}>
+          <UserName color="inherit" to={user.link} user={user} />
+          <FormatDate
+            data-testid="creationDate"
+            value={creation_date}
+            format="ll"
+          />
           <Statistic
             values={item.statistic}
-            display={"total_like,total_view"}
+            display={'total_view'}
+            component={'span'}
+            skipZero={false}
           />
-        </div>
-      </div>
-    </div>
+        </ItemSubInfo>
+      </ItemText>
+    </ItemView>
   );
 };
 
 export default BlogItemView;
-```
-
-```tsx
-// file blog/src/views.tsx
-import BlogItemView from "./components/BlogItemView";
-export default {
-  "blog.itemView.card": BlogItemView,
-};
 ```
 
 ## Loading Skeleton
 
+Loading Skeleton is UI for skeleton that display a placeholder preview of your content before the data gets loaded.
+
 ```tsx
-// file blog/src/components/BlogItemView.tsx
+/**
+ * @type: skeleton
+ * name: blog.itemView.mainCard.skeleton
+ */
 
-const LoadingSkeleton = ({ itemProps }) => {
-  const classes = useStyles();
+export default function LoadingSkeleton(props) {
+
   return (
-    <div className={classes.root}>
-      <div className={classes.outer}>
-        <div className={classes.media}>
-          <Skeleton variant="rect" height={120} component={"div"} />
+    <ItemView {...props}>
+      <ItemMedia>
+        <ImageSkeleton ratio={'169'} borderRadius={0} />
+      </ItemMedia>
+      <ItemText>
+        <div>
+          <Skeleton width={160} />
         </div>
-        <div className={classes.inner}>
-          <Skeleton />
-          <Skeleton />
-          <Skeleton />
+        <ItemTitle>
+          <Skeleton width={'100%'} />
+        </ItemTitle>
+        <ItemSummary>
+          <Skeleton width={160} />
+        </ItemSummary>
+        <div>
+          <Skeleton width={160} />
         </div>
-      </div>
-    </div>
+      </ItemText>
+    </ItemView>
   );
-};
+}
 
-BlogItemView.LoadingSkeleton = LoadingSkeleton;
-
-export default BlogItemView;
 ```
 
 ## Listing Block
@@ -391,12 +460,16 @@ export default BlogItemView;
 You can create new block components by extending other blocks
 
 ```tsx
-import createBlock from "@metafox/framework/createBlock";
-import { ListViewBlockProps } from "@metafox/framework/types";
+/**
+ * @type: block
+ * name: blog.block.BrowseBlogs
+ * title: Browse Blogs
+ * keywords: blog
+ * description: Display listing blogs.
+ */
 
 const BlogListingBlock = createBlock<ListViewBlockProps>({
   extendBlock: "core.block.listview", // extend from block
-  name: "BlogListingBlock", // based Block compoinent
   overrides: {
     // override properties automacally merged to targed component
     contentType: "blog", // layout editor will load view prefix by `contentType.itemView.*` to select itemView.
@@ -406,55 +479,13 @@ const BlogListingBlock = createBlock<ListViewBlockProps>({
     // default properties show in layout editor,
     // only property show in defaults AND NOT in overrides will be show in editor.
     title: "Blogs",
-    blockProps: { variant: "contained" },
-    itemView: "blog.itemView.mainCard",
-    gridContainerProps: { spacing: 2 },
-    gridItemProps: { xs: 12, sm: 12, md: 12, lg: 12, xl: 12 },
+    itemView: 'blog.itemView.mainCard',
+    blockLayout: 'Main Listings',
+    gridLayout: 'Blog - Main Card'
   },
 });
 
 export default BlogListingBlock;
-```
-
-## Side Menu Block
-
-Create a Side Menu block
-
-```tsx
-import createBlock from "@metafox/framework/createBlock";
-import { SideMenuBlockProps as Props } from "@metafox/framework/types";
-
-const BlogSideMenuBlock = createBlock<Props>({
-  extendBlock: "core.block.sideNavigation",
-  name: "BlogSideMenuBlock",
-  displayName: "Blog Menu",
-  keywords: "blogs, navigation, menu",
-  description: "",
-  previewImage: "",
-  overrides: {
-    menuItems: [
-      {
-        to: "/blog",
-        label: "All Blogs",
-        active: true,
-      },
-      {
-        to: "/blog?view=my",
-        label: "My Blogs",
-      },
-      {
-        to: "/blog?view=friend",
-        label: "Friend's Blogs",
-      },
-    ],
-  },
-  defaults: {
-    title: "Blogs",
-    blockProps: { variant: "plained", noHeader: true, noFooter: false },
-  },
-});
-
-export default BlogSideMenuBlock;
 ```
 
 ## Side Category
@@ -469,16 +500,10 @@ const SideCategoryBlock = createBlock<CategoryBlockProps>({
   displayName: "Blog Categories", // display in layout editor
   keywords: "blogs, category", // keyword to search on layout editor
   description: "", // description in layout editor
-  previewImage: "", // preview image in layout editor 200x200
-  overrides: {
-    // overrides properties will apply to derived blog automacally.
-    dataSource: { apiUrl: "/blog-category", apiParams: "" },
-    href: "/blog/category",
-  },
   defaults: {
-    // properties will show in edit block modal.
+    // default properties of block
     title: "Categories",
-    blockProps: { variant: "plained" },
+    appName: "blog"
   },
 });
 

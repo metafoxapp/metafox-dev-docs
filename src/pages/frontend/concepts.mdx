@@ -40,8 +40,8 @@ For example:
 
 For automation testing, please follow below rules:
 
-- For item view, embed view component, detail view component, all _clickable/focusable_ items MUST have `data-tid` (link , ....)
-- For menu component, all menu items MUST have `data-tid`
+- For item view, embed view component, detail view component, all _clickable/focusable_ items MUST have `data-testid` (link , ....)
+- For menu component, all menu items MUST have `data-testid`
 
 ## ui
 
@@ -82,32 +82,34 @@ export default function PhotoAlbumMainCard() {
 
 ## embedView
 
-Naming Convention: **resource_name**.embedView.**parent_resource**
+Naming Convention: **resource_name**.embedItem.name
 
 Declaration of React component is used as the embed content of other component.
 
-For example:
+For example declare blog embed on feed:
 
 ```jsx
 /**
- * @type: itemView
- * name: photo_album.embedView.feedItem
+ * @type: embedView
+ * name: blog.embedItem.insideFeedItem
+ * chunkName: feed_embed
  */
-export default function EmbedPhotoAlbum() {
+
+export default function BlogFeedItem() {
   // your code
 }
+
 ```
 
 ## Dialog
 
-Naming Convention: dialog.**purpose**
+Naming Convention: **prefix**.dialog.**purpose**
 
-See [dialog](/dialog)
+See [dialog](/frontend/dialog)
 
 ```jsx
 /**
  * @type: dialog
- *
  * name: dialog.
  */
 
@@ -143,16 +145,93 @@ Here are list of supported form elements
 21. Tags
 22. TypeCategory
 23. videoUrl
-24. addAlbumn
 
 ## popover
 
+Naming Convention: **module_name**.popover.**purpose**
+
+```jsx
+/**
+ * @type: popover
+ *
+ * name: user.popover.UserProfilePopup
+ */
+
+export default function MyPopover() {
+  // popover code
+}
+```
+
 ## route
+
+Type `route`: declare routing for page.
+
+Path will be matching the URL to define a page
+
+Naming convention: resource_name.**purpose**
+
+```text
+/**
+ * @type: route
+ * name: user.profile
+ * path: /user/:user_id(\d+)/:tab?
+ */
+```
 
 ## modalRoute
 
+Type `modalRoute`: declare routing for modal.
+
+Path will be matching the URL to define a modal.
+
+Naming convention: resource_name.**purpose**.viewModal
+
+```text
+/**
+ * @type: modalRoute
+ * name: blog.detail.viewModal
+ * path: /blog/:id(\d+)/:slug?
+ */
+```
+
 ## saga
+
+Type `saga`: declare sagas side effect(redux-saga).
+We'll create Saga that watches for all actions and triggers.
+
+Naming convention: resource_name.saga.**purpose**
+
+```text
+/**
+ * @type: saga
+ * name: blog.saga.updatedItem
+ */
+```
+
 
 ## reducer
 
+Type `reducer`: declare reducer for module.
+
+Naming convention: module_name
+
+```text
+/**
+ * @type: reducer
+ * name: blog
+ */
+```
+
 ## service
+
+Type `service`: declare service can be a class instance, a function or a React component to handle some pieces of your app logic.
+
+MetaFox platform has a Service Manager called globalContext to manage all services. 
+You can not access the global manager directly but via hooks or saga context.
+
+```text
+/**
+ * @type: service
+ * name: copyToClipboard
+ */
+ ```

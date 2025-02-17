@@ -49,12 +49,12 @@ export default function ExampleDialog({
 
 We are going to use _MetaFox_ annotations syntax for the created dialog.
 
-For example: this source defines a dialog named `sampleModalDialog`
+For example: this source defines a dialog named `core.dialog.sampleModalDialog`
 
 ```text
 /**
  * @type: dialog
- * name: sampleModalDialog
+ * name: core.dialog.sampleModalDialog
  */
 ```
 
@@ -62,7 +62,7 @@ For example: this source defines a dialog named `sampleModalDialog`
 
 ```tsx
 const value = await dialogBackend.present({
-  component: "sampleModalDialog",
+  component: "core.dialog.sampleModalDialog",
   props: {
     title: "Simple Dialog Title",
     message:
@@ -71,12 +71,12 @@ const value = await dialogBackend.present({
 });
 ```
 
-In order to present dialog `dialogBackend`, assign `component` with value of 'sampleModalDialog'.
+In order to present dialog `dialogBackend`, assign `component` with value of 'core.dialog.sampleModalDialog'.
 
 ```tsx
 dialogBackend
   .present({
-    component: "sampleModalDialog",
+    component: "core.dialog.sampleModalDialog",
     props: {
       title: "Simple Dialog Title",
       message:
@@ -143,6 +143,12 @@ Add a Custom Button to Confirm Dialog
 const ok: boolean = await dialogBackend.confirm({
   title: "Confirm",
   messsage: "Are you sure?",
+  positiveButton: {
+    label: i18n.formatMessage({ id: "approve" }),
+  },
+  negativeButton: {
+    label: i18n.formatMessage({ id: "cancel" }),
+  },
 });
 ```
 

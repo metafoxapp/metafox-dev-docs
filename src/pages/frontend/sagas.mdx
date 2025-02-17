@@ -3,25 +3,27 @@ route: /frontend/sagas
 name: sagas
 menu: Frontend
 ---
+Please refer [Redux-Saga](https://redux-saga.js.org/)
 
-Example saga files
+Example:
 
 ```tsx
 /**
  * @type: saga
- * name: updatedVideo
+ * name: blog.saga.updatedItem
  */
 
-import { LocalAction, viewItem } from "@metafox/framework";
-import { takeEvery } from "redux-saga/effects";
+import { LocalAction, viewItem } from '@metafox/framework';
+import { takeEvery } from 'redux-saga/effects';
 
-function* updatedVideo({ payload: { id } }: LocalAction<{ id: string }>) {
-  yield* viewItem("video", "video", id);
+function* updatedItem({ payload: { id } }: LocalAction<{ id: string }>) {
+  yield* viewItem('blog', 'blog', id);
 }
 
-const sagas = [takeEvery("@updatedItem/video", updatedVideo)];
+const sagas = [takeEvery('@updatedItem/blog', updatedItem)];
 
 export default sagas;
+
 ```
 
 metafox build/start command collect all sagas file using [annotation](/frontend/concepts#annotation) `@type: saga`  [saga root pattern](https://redux-saga.js.org/docs/advanced/RootSaga/#nesting-fork-effects-in-all-effect)

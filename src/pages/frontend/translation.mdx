@@ -6,7 +6,25 @@ menu: Frontend
 
 MetaFox translation based on [react-intl](https://formatjs.io/docs/getting-started/installation/)
 
-Within component
+Support phrase translation, you can use service _i18n_ from **useGlobal**.
+
+Example:
 
 ```tsx
+export default function TranslationDemo() {
+  const { i18n } = useGlobal();
+
+  return (
+    <Typography>
+      {i18n.formatMessage(
+        {
+          id: "total_balance_value",
+        },
+        {
+          value: 100,
+        }
+      )}
+    </Typography>
+  );
+}
 ```

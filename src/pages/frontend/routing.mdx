@@ -69,13 +69,12 @@ While `/jack`, `jack/photo`, `/barca`, `/barca/groups` is more difficult, we hav
 
 ### Best Practices:
 
-- Application can be configured to use either Loading progress bar or Empty waiting screen
-- Should use nested route in user/pages/event profile page. TBD.
-- Do not base on the browser location. Instead, when developing UI, use `$PageContext` to ask the context to query content instead of browser location.
+- Should use nested route in module_name to avoid conflict routing with other apps.
+- Do not base on the browser location. Instead, when developing UI, use `$PageContext` from `usePageParams` to ask the context to query content instead of browser location.
 
 ## Code Splitting
 
-Because of app sizing, we have to split code of every Page components. [read more](/technical/code-splitting)
+Because of app sizing, we have to split code of every Page components.
 
 At the first time visiting `/user` page, the associated chunk file is not ready. Thus, if the network speed is around 1 second, end users may see a flash animation.
 
@@ -84,22 +83,23 @@ At the first time visiting `/user` page, the associated chunk file is not ready.
 Here is the sample code for a Modal
 
 ```text
-{
-  sampleModalDialog: {
-    modal: true,
-    path: '/m/example/simple-modal',
-    component: loadable(() => import('./pages/ExampleModal')),
-  },
-  sampleModalPage: {
-    path: '/m/example/simple-modal',
-    component: loadable(() => import('./pages/ExampleModalPage')),
-  },
-}
+/**
+ * @type: modalRoute
+ * name: blog.viewModal
+ * path: /blog/:id(\d+)/:slug?
+ * chunkName: pages.blog
+ * bundle: web
+ */
+
+import { createViewItemModal } from '@metafox/framework';
+
+export default createViewItemModal({
+  appName: 'blog',
+  resourceName: 'blog',
+  pageName: 'blog.viewModal',
+  component: 'blog.dialog.blogView'
+});
+
 ```
 
-You have to create two routes, the first route is for Modal Route, and the seconds is Page Route. You can declare them in `routes.ts` file, with the same path but add property `modal`.
-
-#### How to disable modal dialog on mobile device? 
-TBD
-
-
+Depending on the business flow, You can create two routes type with the same path, the first route is for Modal Route, and the seconds is Page Route.
