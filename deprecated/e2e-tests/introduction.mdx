@@ -38,44 +38,6 @@ yarn cypress:open
 
 ```
 
-For coder, I recommend should use [Visual Studio Code](https://code.visualstudio.com/), And follow preset
-**/tests/e2e/e2e.code-workspace**
-
-## Directory Structure
-
-```text
-  cypress/
-  |- fixtures/            : Contain json sample data
-  |- integration/         : Contain all testcases
-  |    apps/              : Contain all apps testcases
-  |    |- blog/           : Contain all tetcases for blog
-  |       |--frontend/    : fronend testcases
-  |       |--backend/     : backend testcases
-  |
-  |    platform/          : core feature testcases
-  |    |- user/           : Contain all tetcases for user
-  |       |-- frontend/   : fronend testcases
-  |       |-- backend/    : backend testcases
-  |
-  |    installation/      : Installation testcases
-  |
-  |    upgrades/          : Upgrade testcases,
-  |      |- v4-upgrade    : Upgrade from v4
-  |
-  |    common/            :  steps definitions & custom parameter types
-  |
-  |- plugins/
-  |   |- index.ts         : Define plugins for cypress
-  |
-  |- support/             : Define custom commands
-  |
-  |- videos/              : Video records when test failure tests
-  |
-  |- sreenshots/          : Screenshots when failure tests
-  |
-  cypress.json            : Cypress configuration
-```
-
 ## Organization
 
 @metafox comes with multiple user roles & support difference layouts per device sizes,
