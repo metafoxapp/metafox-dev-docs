@@ -124,6 +124,70 @@ frontend/
         module.d.ts: integrate typing
 ```
 
+Open the file app/settings.json and add the declaration for the Note app ("@metafox/note").
+
+```json
+
+{
+  "siteUrl": "/",
+  "cookie": {
+    "attributes": []
+  },
+  "localStore": {
+    "prefix": "mfox"
+  },
+  "packages": {
+    "@metafox/core": "local",
+    "@metafox/app": "local",
+    "@metafox/user": "local",
+    "@metafox/storage": "local",
+    "@metafox/report": "local",
+    "@metafox/notification": "local",
+    "@metafox/static-page": "local",
+    "@metafox/poll": "local",
+    "@metafox/pages": "local",
+    "@metafox/payment": "local",
+    "@metafox/photo": "local",
+    "@metafox/membership": "local",
+    "@metafox/saved": "local",
+    "@metafox/search": "local",
+    "@metafox/sticker": "local",
+    "@metafox/like": "local",
+    "@metafox/reaction": "local",
+    "@metafox/group": "local",
+    "@metafox/friend": "local",
+    "@metafox/forum": "local",
+    "@metafox/event": "local",
+    "@metafox/comment": "local",
+    "@metafox/chatplus": "local",
+    "@metafox/blog": "local",
+    "@metafox/bgstatus": "local",
+    "@metafox/announcement": "local",
+    "@metafox/feed": "local",
+    "@metafox/share": "local",
+    "@metafox/emoji": "local",
+    "@metafox/activity-point": "local",
+    "@metafox/subscription": "local",
+    "@metafox/video": "local",
+    "@metafox/marketplace": "local",
+    "@metafox/quiz": "local",
+    "@metafox/chat": "local",
+    "@metafox/music": "local",
+    "@metafox/advertise": "local",
+    "@metafox/livestreaming": "local",
+    "@metafox/applepay": "local",
+    "@metafox/googlepay": "local",
+    "@metafox/emoney": "local",
+    "@metafox/invite": "local",
+    "@metafox/story": "local",
+    "@metafox/site-background": "local",
+    "@metafox/featured": "local",
+    "@metafox/note": "local"
+  }
+}
+
+```
+
 Now we should add new routing for '/note'. On this page, we will simply show the text "This is note home page" for now.
 
 Let's create a new file at `frontend/packages/company/note/src/pages/HomePage.tsx` and add following code:
