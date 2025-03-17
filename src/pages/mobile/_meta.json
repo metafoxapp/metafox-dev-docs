@@ -4,5 +4,7 @@
   "reducers": "Reducers",
   "sagas": "Sagas",
   "service": "Services",
-  "translation": "Translation"
+  "translations": "Translations",
+  "concepts": "Concepts",
+  "components": "Core Components"
 }
