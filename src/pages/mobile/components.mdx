@@ -1,0 +1,566 @@
+# Core Components
+
+## smarty.SmartResourceList
+
+Render items listing with dynamic options.
+
+**Example in `layout.json`**
+
+```json
+{
+  "component": "smarty.SmartResourceList",
+  "props": {
+    "key": "smarty.SmartResourceList",
+    "hasFilter": true,
+    "module_name": "blog",
+    "resource_name": "blog",
+    "actionName": "viewAll",
+    "extraItemProps": {
+      "alignment": "right"
+    },
+    "skeletonComponent": {
+      "component": "skeleton.blog.blog"
+    },
+    "emptyComponent": {
+      "component": "ui.EmptyList",
+      "props": {
+        "label": "no_blogs_found",
+        "action": {
+          "label": "add_new_item",
+          "sub_label": "start_adding_new_items_by_create_new_stuffs",
+          "value": "addItem",
+          "params": {
+            "module_name": "blog",
+            "resource_name": "blog"
+          },
+          "showWhen": ["and", ["truthy", "acl.blog.blog.create"]]
+        }
+      }
+    }
+  }
+}
+```
+
+**Properties**
+
+| Name                      | Type    | Default | Description                                                                                                                                    |
+| :------------------------ | :------ | :------ | :--------------------------------------------------------------------------------------------------------------------------------------------- |
+| module_name               | string  |         | Name of the module.                                                                                                                            |
+| resource_name             | string  |         | Name of the resource.                                                                                                                          |
+| actionName                | string  |         | The name of the action when calling the API backend. This requires `module_name` and `resource_name`.                                          |
+| startReload               | boolean | false   | Whether to reload the list items initially.                                                                                                    |
+| dataSource                | object  |         | The data source object.                                                                                                                        |
+| deprecatedDataSource      | object  |         | The deprecated data source object.                                                                                                             |
+| dataSourceApiVersion      | string  |         | The API version of the data source.                                                                                                            |
+| limit                     | number  |         | The limit on the number of items in the list.                                                                                                  |
+| canLoadMore               | boolean | true    | Whether more items can be loaded into the list.                                                                                                |
+| useAnimation              | boolean | false   | Whether to use `GestureHandlerFlatList` from [react-native-gesture-handler](https://docs.swmansion.com/react-native-gesture-handler/docs/).    |
+| useNavigationScrollHeader | boolean | false   | Whether to use `FlatList` from [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/).                                 |
+| useBottomSheetFlatList    | boolean | false   | Whether to use `BottomSheetFlatList` from [@gorhom/bottom-sheet](https://gorhom.dev/react-native-bottom-sheet/components/bottomsheetflatlist). |
+| skeletonComponent         | object  |         | The component to display while loading data from the API.                                                                                      |
+
+## smarty.SmartTabs
+
+Render tab view.
+
+**Example in `layout.json`**
+
+```json
+{
+  "component": "smarty.SmartTabs",
+  "props": {
+    "key": "smarty.SmartTabs",
+    "tabsRefreshEnabled": true,
+    "headerComponent": {
+      "component": "ui.UserHeaderInfoBlock",
+      "props": {
+        "key": "ui.UserHeaderInfoBlock",
+        "module_name": "user",
+        "resource_name": "user",
+        "actionName": "viewItem"
+      }
+    },
+    "tabs": [
+      {
+        "component": "smarty.SmartResourceList",
+        "props": {
+          "title": "blog",
+          "module_name": "blog",
+          "resource_name": "blog",
+          "actionName": "viewAll",
+          "skeletonComponent": {
+            "component": "skeleton.blog.blog"
+          },
+          "emptyComponent": {
+            "component": "ui.EmptyList",
+            "props": {
+              "label": "no_blogs_found"
+            }
+          }
+        }
+      }
+    ],
+    "showOneTab": false,
+    "tabBarStyle": {
+      "width": "auto"
+    }
+  }
+}
+```
+
+**Properties**
+
+| Name               | Type                 | Default            | Description                                                                                           |
+| :----------------- | :------------------- | :----------------- | :---------------------------------------------------------------------------------------------------- |
+| tabsRefreshEnabled | boolean              | false              | Allow to refresh each tab separately.                                                                 |
+| tabBarStyle        | viewStyle            |                    | Style for the tab bar container.                                                                      |
+| tabContainerStyle  | viewStyle            |                    | Style for the tab container .                                                                         |
+| tabs               | Array&lt;SomeComponent&gt; |                    | The array of tab components. Must be a child of `SmartTabs` component.                                |
+| isFull             | boolean              |                    | The object that contains API data source for the component. Must be a child of `SmartTabs` component. |
+| showOneTab         | boolean              | true               | Show only one tab at a time. If set to `false`, all tabs will be shown.                               |
+| scrollEnabled      | boolean              | true               | Enable or disable scroll for the tab bar. If set to `false`, the tab bar will not be scrollable.      |
+| headerComponent    | ReactComponent       |                    | Component for the header of the tab bar. Must be a child of `SmartTabs` component.                    |
+| tabBarComponent    | ReactComponent       | ui.SmartTabsTabBar | Component for the tab bar. Must be a child of `SmartTabs` component.                                  |
+
+## smarty.SmartListBlock
+
+This block represents a list of items related to the current module.
+It is used to display a list of items with various properties and actions.
+
+**Example in layout.json**
+
+```json
+{
+  "component": "smarty.SmartListBlock",
+  "props": {
+    "key": "smarty.SmartListBlock",
+    "horizontal": true,
+    "title": "similar_blogs",
+    "itemView": "item.blog.blog.Similar",
+    "moduleName": "blog",
+    "resourceName": "blog",
+    "actionName": "viewSimilar",
+    "limit": 10,
+    "customAction": {
+      "key": "viewAll",
+      "icon": "angle-right",
+      "router": "viewItemListing",
+      "headerTitleForActionScreen": "similar_blogs"
+    }
+  }
+}
+```
+
+**Properties**
+
+| Name         | Type    | Default | Description                                                                                                                                     |
+| :----------- | :------ | :------ | :---------------------------------------------------------------------------------------------------------------------------------------------- |
+| moduleName   | string  |         | Name of the module.(`required`)                                                                                                                 |
+| resourceName | string  |         | Name of the resource.(`required`)                                                                                                               |
+| actionName   | string  |         | The name of the action when calling the API backend.(`required`)                                                                                |
+| itemView     | string  |         | Name of the component that will be used to render each item in the list. Must be a component that is registered in the `ui` module.(`required`) |
+| limit        | number  |         | The limit on the number of items in the list.                                                                                                   |
+| horizontal   | boolean |         | Whether to show the list in a horizontal or vertical orientation.                                                                               |
+| customAction | object  |         | The custom action object that will be used to render the custom action button.                                                                  |
+| canLoadMore  | boolean | false   | Whether more items can be loaded into the list.                                                                                                 |
+
+## smarty.SmartScrollIntab
+
+This component will render a scrollable content in a tab. It is used to display a scrollable content when use `SmartTabs`.
+
+**Example in layout.json**
+
+```json
+{
+  "component": "smarty.SmartScrollIntab",
+  "props": {
+    "key": "smarty.SmartScrollIntab",
+    "components": [
+      {
+        "component": "ui.ProfileInformationBlock",
+        "props": {
+          "key": "ui.ProfileInformationBlock",
+          "title": "information"
+        }
+      }
+    ]
+  }
+}
+```
+
+**Properties**
+
+| Name | Type                 | Default | Description                                                                   |
+| :--- | :------------------- | :------ | :---------------------------------------------------------------------------- |
+| tabs | Array&lt;SomeComponent&gt; |         | The array of tab components. Must be a child of `SmartScrollIntab` component. |
+
+## ui.ModuleHeader
+
+Header for home listing.
+
+**Example in layout.json**
+
+```json
+{
+  "component": "ui.ModuleHeader",
+  "props": {
+    "key": "ui.ModuleHeader",
+    "title": "all_blogs",
+    "rightButtons": [
+      {
+        "component": "ui.HeaderRightButton",
+        "props": {
+          "key": "searchItem",
+          "icon": "search-o",
+          "value": "searchItem",
+          "params": {
+            "module_name": "blog",
+            "resource_name": "blog"
+          }
+        }
+      }
+    ]
+  }
+}
+```
+
+**Properties**
+
+| Name         | Type             | Default | Description                                                                                                                                               |
+| :----------- | :--------------- | :------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| title        | string           |         | Title of header. This is the text that will be displayed in the header.                                                                                   |
+| isTitleOnly  | boolean          | false   | If set to true, only the title will be displayed in the header.                                                                                           |
+| rightButtons | &lt;ReactComponent&gt; |         | Display view right header. This can be an array of components or a single component. Example: `{ "component": "ui.HeaderRightButton", "props": { ... } }` |
+
+## ui.HeaderItemDetail
+
+Header for detail item.
+
+**Example in layout.json**
+
+```json
+{
+  "component": "ui.HeaderItemDetail",
+  "props": {
+    "key": "ui.HeaderItemDetail",
+    "title": "blog",
+    "menuName": "detailActionMenu"
+  }
+}
+```
+
+**Properties**
+
+| Name         | Type             | Default          | Description                                                                                                                                               |
+| :----------- | :--------------- | :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| title        | string           |                  | Title of header. This is the text that will be displayed in the header.                                                                                   |
+| isTitleOnly  | boolean          | false            | If set to true, only the title will be displayed in the header.                                                                                           |
+| menuName     | string           | detailActionMenu | Name of the menu to be used for actions related to the detail view.                                                                                       |
+| back         | boolean          | true             | If set to true, a back button will be displayed on the left side of the header.                                                                           |
+| rightButtons | &lt;ReactComponent&gt; |                  | Display view right header. This can be an array of components or a single component. Example: `{ "component": "ui.HeaderRightButton", "props": { ... } }` |
+
+## ui.SimpleHeader
+
+**Example in layout.json**
+
+```json
+{
+  "component": "ui.SimpleHeader",
+  "props": {
+    "key": "ui.SimpleHeader",
+    "title": "blog"
+  }
+}
+```
+
+**Properties**
+
+| Name         | Type             | Default | Description                                                                                                                                               |
+| :----------- | :--------------- | :------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| title        | string           |         | Title of header. This is the text that will be displayed in the header.                                                                                   |
+| rightButtons | &lt;ReactComponent&gt; |         | Display view right header. This can be an array of components or a single component. Example: `{ "component": "ui.HeaderRightButton", "props": { ... } }` |
+
+## ui.ItemTitle
+
+Title field of an item.
+
+**Example**
+
+```tsx
+const [ItemTitle] = jsxBackend.all(['ui.ItemTitle']);
+
+<ItemTitle title={item.title} item={item} />;
+```
+
+**Properties**
+
+| Name       | Type      | Default | Description                                                                                                                     |
+| :--------- | :-------- | :------ | :------------------------------------------------------------------------------------------------------------------------------ |
+| title      | string    |         | title of the item.(`required`)                                                                                                  |
+| fontWeight | string    | bold    | Name of the resource.                                                                                                           |
+| preset     | string    | h1      | The name of the action when calling the API backend.                                                                            |
+| style      | TextStyle |         | Optional styles to be applied to the `Text` component.                                                                          |
+| item       | object    |         | The data object representing the item. This object should contain all the necessary properties and methods related to the item. |
+
+## ui.ItemPricing
+
+Pricing field of an item.
+
+**Example**
+
+```tsx
+const [ItemPricing] = jsxBackend.all(['ui.ItemPricing']);
+
+<ItemPricing item={item} />;
+```
+
+**Properties**
+
+| Name | Type   | Default | Description                                                                                                       |
+| :--- | :----- | :------ | :---------------------------------------------------------------------------------------------------------------- |
+| item | object |         | This object should contain a required property called `price`. It represents the data object related to the item. |
+
+## ui.ItemPendingStatus
+
+Field that shows the status of the item, which can be 'approved' or 'decline'.
+When item has extra.can_approve, it will show two button to approve and decline the item.
+
+**Example**
+
+```tsx
+const [ItemPendingStatus] = jsxBackend.all(['ui.ItemPendingStatus']);
+
+<ItemPendingStatus item={item} />;
+```
+
+**Properties**
+
+| Name | Type   | Default | Description                                                                                                            |
+| :--- | :----- | :------ | :--------------------------------------------------------------------------------------------------------------------- |
+| item | object |         | This object should contain a required property called `is_pending`. It represents the data object related to the item. |
+
+## ui.ItemHtmlContent
+
+Field that shows the content of the item in HTML format.
+
+**Example**
+
+```tsx
+const [ItemHtmlContent] = jsxBackend.all(['ui.ItemHtmlContent']);
+
+<ItemHtmlContent text={item.text} containerWidth={100} noBorder={true} />;
+```
+
+**Properties**
+
+| Name           | Type    | Default | Description                                                           |
+| :------------- | :------ | :------ | :-------------------------------------------------------------------- |
+| text           | string  |         | The html content of the item.(`required`)                             |
+| noBorder       | boolean | true    | If set to true, the component will not have a border.                 |
+| containerWidth | number  | 0       | The width of the container that will be used to render the component. |
+
+## ui.ItemExternalLink
+
+Field that shows the status of the item, which can be 'approved' or 'decline'.
+When item has extra.can_approve, it will show two button to approve and decline the item.
+
+**Example**
+
+```tsx
+const [ItemExternalLink] = jsxBackend.all(['ui.ItemExternalLink']);
+
+<ItemExternalLink item={item} />;
+```
+
+**Properties**
+
+| Name     | Type      | Default | Description                                                                                                               |
+| :------- | :-------- | :------ | :------------------------------------------------------------------------------------------------------------------------ |
+| fontSize | number    | small   | The font size of the external link. Can be a number (e.g. 14) or a string (e.g. 'small').                                 |
+| style    | ViewStyle |         | Optional containerStyle to be applied to component that displays the external link.                                       |
+| item     | object    |         | This object should contain a required property called `external_link`. It represents the data object related to the item. |
+
+## ui.ItemAuthor
+
+Field that shows the author of the item.
+
+**Example**
+
+```tsx
+const [ItemAuthor] = jsxBackend.all(['ui.ItemAuthor']);
+
+<ItemAuthor
+  user={item.user}
+  date={item.creation_date}
+  owner={owner}
+  numberOfLines={2}
+  privacy={item?.privacy}
+/>;
+```
+
+**Properties**
+
+| Name          | Type   | Default | Description                                                                  |
+| :------------ | :----- | :------ | :--------------------------------------------------------------------------- |
+| user          | object |         | The user object associated with the item.                                    |
+| date          | string |         | The creation date of the item.                                               |
+| owner         | object |         | The owner of the item.                                                       |
+| numberOfLines | number |         | Number of lines to display.                                                  |
+| privacy       | object |         | Privacy settings of the item, determining visibility and access permissions. |
+
+## ui.ItemCategories
+
+Field that shows the categories of the item.
+
+**Example**
+
+```tsx
+const [ItemCategories] = jsxBackend.all(['ui.ItemCategories']);
+
+<ItemCategories
+  categories={categories}
+  separator={separator}
+  showLabel={showLabel}
+  numberOfLines={numberOfLines}
+  textTransform={textTransform}
+  styles={styles}
+  label={label}
+  isActive={isActive}
+  onPress={onPress}
+/>;
+```
+
+**Properties**
+
+| Name          | Type     | Default          | Description                                              |
+| :------------ | :------- | :--------------- | :------------------------------------------------------- |
+| categories    | object   |                  | The categories object associated with the item.          |
+| separator     | string   | ,                | The separator to use between each category.              |
+| showLabel     | boolean  | true             | Whether to show the category label.                      |
+| styles        | object   |                  | Optional styles to be applied to the category container. |
+| label         | string   | categories_colon | Optional label to be used for the category.              |
+| isActive      | boolean  | false            | Whether the category is active.                          |
+| onPress       | function |                  | Function to be called when a category is pressed.        |
+| numberOfLines | number   | 0                | Number of lines to display.                              |
+
+## ui.ItemTags
+
+Field that shows the tags of the item.
+
+**Example**
+
+```tsx
+const [ItemTags] = jsxBackend.all(['ui.ItemTags']);
+
+<ItemTags
+  label={'topics_colon'}
+  tags={item.tags}
+  module_name={item.module_name}
+  resource_name={item.resource_name}
+  styles={styles}
+/>;
+```
+
+**Properties**
+
+| Name          | Type      | Default      | Description                                          |
+| :------------ | :-------- | :----------- | :--------------------------------------------------- |
+| label         | string    | topics_colon | Optional label to be used for the tags.              |
+| tags          | array     |              | The tags object associated with the item.            |
+| module_name   | string    |              | The name of the module associated with the item.     |
+| resource_name | string    |              | The name of the resource associated with the item.   |
+| styles        | ViewStyle |              | Optional styles to be applied to the tags container. |
+
+## ui.ItemExtraInfo
+
+Field that shows the infor of the item.
+
+**Example**
+
+```tsx
+const [ItemExtraInfo] = jsxBackend.all(['ui.ItemExtraInfo']);
+
+<ItemExtraInfo
+  label={`${i18n.formatMessage({ id: 'year' })}: `}
+  content={item.year}
+/>;
+```
+
+**Properties**
+
+| Name    | Type   | Default | Description                                      |
+| :------ | :----- | :------ | :----------------------------------------------- |
+| label   | string |         | Optional label to be used for the extra info.    |
+| content | string |         | The extra info content associated with the item. |
+
+## ui.ItemFormatDate
+
+Field that shows the date of the item.
+
+**Example**
+
+```tsx
+const [ItemFormatDate] = jsxBackend.all(['ui.ItemFormatDate']);
+
+<ItemFormatDate
+  value={'new Date()'}
+  styles={styles}
+  format="MMMM DD, yyyy"
+  phrase="last_update_on_time"
+/>;
+```
+
+**Properties**
+
+| Name   | Type      | Default | Description                                                       |
+| :----- | :-------- | :------ | :---------------------------------------------------------------- |
+| value  | string    |         | The date value to be formatted.                                   |
+| format | string    | llll    | The date format to be used. See https://date-fns.org/docs/format. |
+| phrase | string    |         | The phrase to be used for the date.                               |
+| styles | TextStyle |         | The text style to be applied to the formatted date.               |
+
+## ui.ItemReactionBar
+
+Field that shows the reaction bar of the item.
+
+**Example**
+
+```tsx
+const [ItemReactionBar] = jsxBackend.all(['ui.ItemReactionBar']);
+
+<ItemReactionBar item={item} />;
+```
+
+**Properties**
+
+| Name               | Type      | Default | Description                                                                                  |
+| :----------------- | :-------- | :------ | :------------------------------------------------------------------------------------------- |
+| item               | object    |         | The item object associated with the reaction bar. Must have one of the following properties: |
+|                    |           |         | `extra.can_share` or `extra.can_like` or `extra.can_comment`                                 |
+|                    |           |         |
+|                    |           |
+| columnContentStyle | ViewStyle |         | The style to be applied to the reaction bar container.                                       |
+
+## ui.ItemLocation
+
+Field that shows the location of the item.
+
+**Example**
+
+```tsx
+const [ItemLocation] = jsxBackend.all(['ui.ItemLocation']);
+
+<ItemLocation item={item} />;
+```
+
+**Properties**
+
+| Name           | Type      | Default | Description                                                                              |
+| :------------- | :-------- | :------ | :--------------------------------------------------------------------------------------- |
+| item           | object    |         | The item object associated with the location. Must have one of the following properties: |
+|                |           |         | `location.address` - The location address.                                               |
+|                |           |         |
+|                |           |
+| containerStyle | ViewStyle |         | The style to be applied to the container of the location field.                          |
+| fontSize       | string    | small   | The font size of the location text.                                                      |
+| color          | string    | light   | The color of the location text.                                                          |

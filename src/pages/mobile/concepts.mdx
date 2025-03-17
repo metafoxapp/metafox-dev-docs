@@ -1,0 +1,303 @@
+# Concepts
+
+## Annotation
+
+Since MetaFox comes with _Modular_ structure, Build tool helps solve issues of dependencies without using `import` directly. Build tool will scan all packages declared in `settings.json` file, find all components, librarys to build the bundle.
+
+For example:
+
+```text
+/**
+ * @type: route
+ * name: blog.blog.show
+ * path: blog/:id(\d+), blog/:id(\d+)/:slug
+ */
+```
+
+### Best practices
+
+1. Keep anotation at the begin of source file
+2. Each file should declare only one component.
+
+### Annotation
+
+| Type       | Group                 |
+|------------|-----------------------|
+| ui         | UI components         |
+| route      | screen route          |
+| saga       | saga functions        |
+| siteDock   | global components     |
+| reducer    | reducer functions     |
+| service    | services provider     |
+| middleware | middleware components |
+| polyfills  | polyfills             |
+
+## ui
+
+Shared UI component.
+
+**Example**
+
+```ts
+/**
+ * @type: ui
+ * name: ui.NotificationSettings
+ */
+```
+
+**Properties**
+
+**`name`**: Alias of the component.
+
+- Name rules
+
+  | Syntax                                                 | Prefix        | Description                                                           | Example                                           |
+    | :----------------------------------------------------- | :------------ | :-------------------------------------------------------------------- | :------------------------------------------------ |
+  | ui.`ComponentName`                                     | ui.           | UI component.                                                         | `ui.ViewMore`<br/>`ui.HeaderItemDetail`           |
+  | smarty.`ComponentName`                                 | smarty.       | List component.                                                       | `smarty.SmartResourceList`<br/>`smarty.SmartTabs` |
+  | item.`module_name`.`resource_name`                     | item.         | Item component belongs to `module_name`, `resource_name`.             | `item.event.event_member`                         |
+  | item.`module_name`.`resource_name`.`ComponentName`     | item.         | Special item component belongs to `module_name`, `resource_name`.     | `item.event.event_member.EventHost`               |
+  | embed.`module_name`.`resource_name`                    | embed.        | Embed component belongs to `module_name`, `resource_name`.            | `embed.event.event`                               |
+  | skeleton.`module_name`.`resource_name`                 | skeleton.     | Skeleton component belongs to `module_name`, `resource_name`.         | `skeleton.event.event`                            |
+  | skeleton.`module_name`.`resource_name`.`ComponentName` | skeleton.     | Special skeleton component belongs to `module_name`, `resource_name`. | `skeleton.event.event.EventHost`                  |
+  | form.element.`ComponentName`                           | form.element. | Form component.                                                       | `form.element.Checkbox`                           |
+
+**Usage**
+
+Use `name` to get React component.
+
+```js
+const { jsxBackend } = useGlobal();
+
+// Get single component
+const CompA = jsxBackend.get('ui.ComponentA');
+
+// Get multiple components
+const [CompB, CompC] = jsxBackend.all(['ui.ComponentB', 'ui.ComponentC']);
+```
+
+## route
+
+Screen component
+
+**Example**
+
+```ts
+/**
+ * @type: route
+ * name: RoomInfoEditView
+ * path: RoomInfoEditView
+ * group: root
+ * getId: route => 'RoomInfoEditView'
+ * mode: card_hide_tab
+ */
+```
+
+**Properties**
+
+**`name`**: Alias of the screen.
+
+- Name rules
+
+  | Syntax                                        | Prefix  | Suffix           | Description                                                               | Example                          |
+    | :-------------------------------------------- | ------- | :--------------- | :------------------------------------------------------------------------ | :------------------------------- |
+  | `ScreenName`                                  |         |                  | Screen component.                                                         | `CreateStoryScreen`              |
+  | `module_name`.`ScreenName`                    |         |                  | Screen belongs to `module_name`.                                          | `core.error403`                  |
+  | `module_name`.home                            |         | .home            | Main list screen belongs to `module_name`.                                | `blog.home`                      |
+  | `module_name`.`resource_name`.show            |         | .show            | Detail screen belongs to `module_name`, `resource_name`.                  | `event.pending_post.show`        |
+  | `module_name`.`resource_name`.searchItem      |         | .searchItem      | Search screen belongs to `module_name`, `resource_name`.                  | `group.group_request.searchItem` |
+  | `module_name`.`resource_name`.searchItemOnTab |         | .searchItemOnTab | Search screen of a list in tab belongs to `module_name`, `resource_name`. | `group.group.searchItemOnTab`    |
+  | search.`module_name`.`ScreenName`             | search. |                  | Global search screen.                                                     | `search.search.defer`            |
+
+**`path`**: List of paths used to navigate to current screen.
+
+- Rules:
+
+    - A screen can have multiple `path`.
+    - Separate each `path` with a comma `,`.
+    - A parameter of a `path` is placed after a colon `:` (`event/:id`).
+    - You can limit the allowed values for a parameter by adding these values in parentheses `()`, separated by a pipe `|` (`/:tab(viewAll|viewMyBlogs)`).
+
+- Name rules:
+
+  Some `path` syntax for special screens.
+
+  | Screen Name                                   | Path Syntax                                                      | Description                                                                   | Example                                                      |
+    | --------------------------------------------- | :--------------------------------------------------------------- | :---------------------------------------------------------------------------- | :----------------------------------------------------------- |
+  | `module_name`.home                            | /`module_name`                                                   | Main list screen belongs to `module_name`.                                    | `/group`                                                     |
+  |                                               | /`module_name`/:tab(`actionName1`\|`actionName2`)                | Main list screen belongs to `module_name` with `actionName`.                  | `/group/:tab(viewAll\|viewMyGroups\|viewMyPendingGroups)`    |
+  |                                               | /`module_name`/:resource_name/:tab(`actionName1`\|`actionName2`) | Main list screen belongs to `module_name`, `resource_name` with `actionName`. | `/group/:resource_name/:tab(all\|viewHosting\|friend\|past)` |
+  | `module_name`.`resource_name`.show            | /`module_name`/:id                                               | Detail screen belongs to `module_name` with `id`.                             | `/marketplace/:id`                                           |
+  |                                               | /`module_name`/`resource_name`/:id                               | Detail screen belongs to `module_name`, `resource_name` with `id`.            | `/marketplace/marketplace_invoice/:id`                       |
+  | `module_name`.`resource_name`.searchItem      | /search/`module_name`/`resource_name`/searchItem                 | Search screen belongs to `module_name`, `resource_name`.                      | `/search/group/group/searchItem`                             |
+  | `module_name`.`resource_name`.searchItemOnTab | /search/`module_name`/`resource_name`/searchItemOnTab            | Search screen of a list in tab belongs to `module_name`, `resource_name`.     | `/search/group/group/searchItemOnTab`                        |
+
+**`group`(optional)**: Group type.
+
+> If group isn't declared, the screen is accessible only when the user is **logged in**.
+
+- `auth`
+
+    - Screen is used for authentication.
+    - Screen is accessible only when the user is **not logged in**.
+
+- `root`
+    - Screen can be used regardless of user login status.
+
+**`getId`(optional)**: Callback to return an unique ID to use for the screen (Used by library `react-navigation`).
+
+**`mode`(optional)**: Display mode of the screen.
+
+| Mode              | Header | Bottom Tab | Description                                                                        |
+| :---------------- | :----: | :--------: | ---------------------------------------------------------------------------------- |
+| `card`(default)   |   X    |     X      | Normal mode.                                                                       |
+| `card_hide_tab`   |   X    |            | Normal mode with no bottom tab.                                                    |
+| `modal`           |        |            | Modal mode with no header (Configuration: `modalScreenOptions`).                   |
+| `overlay`         |        |            | Modal mode with no header for media modules (Configuration: `modalScreenOptions`). |
+| `modalWithHeader` |   X    |            | Normal mode with header (Used for Form screens in group `auth`).                   |
+
+**Usage**
+
+| Property | Usage                                               | Example                                                                                    |
+| :------- | :-------------------------------------------------- | :----------------------------------------------------------------------------------------- |
+| `name`   | navigationBackend.push(`name`, `...otherProps`)     | `navigationBackend.push('form.edit')`                                                      |
+|          | navigationBackend.replace(`name`, `...otherProps`)  |                                                                                            |
+|          | navigationBackend.navigate(`name`, `...otherProps`) |                                                                                            |
+|          | navigationBackend.push(`name`, `...otherProps`)     |                                                                                            |
+| `path`   | navigationBackend.openLink(`path`, `...otherProps`) | `navigationBackend.openLink('/group')`<br/>`navigationBackend.openLink('user/${item.id}')` |
+
+## saga
+
+**Example**
+
+```ts
+/**
+ * @type: saga
+ * name: featured
+ */
+```
+
+**Properties**
+
+**`name`**: Alias of the saga.
+
+---
+
+## siteDock
+
+Single instance components or screens that can be used everywhere.
+
+**Example**
+
+```ts
+/**
+ * @type: siteDock
+ * name: ReactionController
+ */
+```
+
+**Properties**
+
+**`name`**: Alias of the component.
+
+**Usage**
+
+- Get the instance from hook `useGlobal`.
+
+```js
+const { i18n, reactionBackend, toastBackend } = useGlobal();
+
+reactionBackend.show();
+
+toastBackend.show({
+  message: i18n.formatMessage({ id: 'copied_to_clipboard' })
+});
+```
+
+---
+
+## reducer
+
+**Example**
+
+```ts
+/**
+ * @type: reducer
+ * name: pagination
+ */
+```
+
+**Properties**
+
+**`name`**: Alias of the reducer.
+
+---
+
+## service
+
+Global utility functions.
+
+**Example**
+
+```ts
+/**
+ * @type: service
+ * name: uiControllerBackend
+ */
+```
+
+**Properties**
+
+**`name`**: Alias of the utility.
+
+**Usage**
+
+- Use in React component.
+
+```js
+const { navigationBackend } = useGlobal();
+
+navigationBackend.push('form.edit');
+```
+
+- Use in saga function.
+
+```js
+const { navigationBackend } = yield* getGlobalContext();
+
+yield call(navigationBackend.push, 'form.edit');
+```
+
+---
+
+## middleware
+
+App's middleware components.
+
+**Example**
+
+```ts
+/**
+ * @type: middleware
+ * name: AppFirebase
+ */
+```
+
+**Properties**
+
+**`name`**: Alias of the middleware.
+
+---
+
+## polyfills
+
+App's polyfills.
+
+**Example**
+
+```ts
+/**
+ * @type: polyfills
+ * name: voip.polyfills
+ */
+```
