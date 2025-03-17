@@ -85,7 +85,7 @@ packages/
       composer.json
 ```
 
-### Frontend
+### Frontend Web
 
 We assume that you have set up development environment to build React on your machine/server. The _Frontend_ source is located under the `frontend` folder.
 
@@ -158,14 +158,96 @@ In terminal, go to the top root folder and run the following command
 cp -rf frontend/app/dist/* web/
 ```
 
-# Now, you can open browser and go the URL http://localhost:8081/note . The message "This is note home page" on the screen.
+Now, you can open browser and go the URL http://localhost:8081/note . The message "This is note home page" on the screen.
 
-Open browser then see "This is note home page" on the screen.
+### Mobile App
 
-> > > > > > > 055d51f8a (fix)
+We assume that you have set up development environment to build React Native on your machine/server. The _Mobile_ source is located under the `metafox-mobile` folder.
 
-### Add Landing Page
+Navigate to folder `metafox` at `metafox-mobile/packages/metafox` and create a new folder for _Notes_ app named `note`.
 
+_Notes_ app should contain the structure as below:
+
+```text
+    metafox-mobile/
+        packages/
+            metafox/
+              note/
+                src/
+                  components/
+                  screens/
+                  reducers/
+                  sagas/
+                  constants.ts
+                  index.ts
+                  layouts.flatten.json
+                  layouts.json
+                  module.d.ts
+                  reducers.ts
+                  sagas.ts
+                  types.ts
+                package.json
+                tsconfig.json
+```
+
+Next, we will declare this app name in `apps/settings.json`. 
+
+Now, we will add a new screen for _Notes_ app. On this screen, we will simply show the text "This is note home screen" for now.
+
+Let's create a new file at `metafox-mobile/packages/metafox/note/src/screens/HomeScreen.tsx` and add following code:
+
+```jsx
+/**
+ * @type: route
+ * name: note.home
+ * path: /note, /note/:tab(viewAll)
+ */
+
+import React from 'react';
+import { View, Text } from 'react-native';
+
+function HomeScreen() {
+  return (
+    <View>
+      <Text>This is note home screen</Text>
+    </View>
+  );
+}
+
+export default HomeScreen;
+```
+
+Now, we will open terminal and run following commands to build the mobile app:
+
+```bash
+yarn config-app
+yarn android # OR yarn ios
+yarn start
+```
+
+After that, you will need to run mobile app using Android Studio or XCode. Once the app starts, you can navigate to note home screen as follows:
+
+```js
+const SomeComponent = () => {
+  const { navigationBackend } = useGlobal();
+
+  navigationBackend.navigate('note.home');
+
+// OR
+// navigationBackend.push('note.home');
+
+// OR
+// navigationBackend.openLink('/note');
+  
+  ...
+}
+```
+
+
+
+### Add Landing Page/Screen
+
+#### Frontend Web
 Editing `./src/pages/HomePage.tsx`
 
 ```tsx
@@ -217,7 +299,120 @@ Add new file `./src/assets/pages/note.home.json` and paste:
 }
 ```
 
+#### Mobile App
+
+Edit `note/src/screens/HomeScreen.tsx`:
+
+```js
+/**
+ * @type: route
+ * name: note.home
+ * path: /note, /note/:tab(viewAll)
+ */
+import { createModuleHomeScreen } from '@metafox/layout';
+
+export default createModuleHomeScreen({
+  appName: 'note',
+  resource: 'note',
+  useFilterMenu: true
+});
+```
+
+Add new layout for this screen in `note/src/layouts.json`:
+
+```js
+"note.home": {
+    "header": [
+      {
+        "component": "ui.ModuleHeader", // header component              
+        "props": {
+          "key": "ui.ModuleHeader",
+          "title": "all_notes",
+          "rightButtons": [
+            {
+              "component": "ui.HeaderRightButton",
+              "props": {
+                "key": "searchItem",
+                "icon": "search-o",
+                "value": "searchItem",
+                "params": {
+                  "module_name": "note",
+                  "resource_name": "note"
+                }
+              }
+            },
+            {
+              "component": "ui.HeaderRightButton",
+              "props": {
+                "key": "listItem",
+                "icon": "list-bullet-o",
+                "value": "@app/FILTER_CATEGORY",
+                "params": {
+                  "module_name": "note",
+                  "resource_name": "note"
+                }
+              }
+            },
+            {
+              "component": "ui.HeaderRightButton",
+              "props": {
+                "key": "addItem",
+                "icon": "plus",
+                "value": "addItem",
+                "params": {
+                  "module_name": "note",
+                  "resource_name": "note"
+                },
+                "showWhen": [
+                  "and",
+                  [
+                    "truthy",
+                    "acl.note.note.create"
+                  ]
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "content": [
+      {
+        "component": "smarty.SmartResourceList",  // content component
+        "props": {
+          "key": "smarty.SmartResourceList",
+          "hasFilter": true,
+          "module_name": "note",
+          "resource_name": "note",
+          "actionName": "viewAll",  // actionName to get API url
+          "skeletonComponent": {  // skeleton component for loading
+            "component": "skeleton.note.note"
+          },
+          "emptyComponent": { // empty component for empty list
+            "component": "ui.EmptyList",
+            "props": {
+              "label": "no_notes_found"
+            }
+          }
+        }
+      }
+    ],
+    "mainBottom": [
+      {
+        "component": "ui.SortFilterFabButton", // sort/filter button at the bottom
+        "props": {
+          "key": "ui.SortFilterFabButton"
+        }
+      }
+    ]
+  }
+```
+
+Then, run the command `yarn config-app` to apply all above changes.
+
 ### Add New Menu
+
+#### Backend
 
 Open backend source `./packages/company/note/resources/menu/menus.php`, There are 02 menus defines:
 
@@ -287,6 +482,7 @@ Checking `./note` to see the new menu item `note::phrase.all_note` menu items.
 
 ### Add Sample Block
 
+#### Frontend Web
 Following guide we create a new layout block for frontend and display a sample block content.
 
 Open layout file `./packages/company/note/src/assets/pages/note.home.json`
@@ -720,6 +916,8 @@ Checking `backend/packages/metafox/note/resouces/drivers.php` contains
 
 ## Home Page
 
+### Frontend Web
+
 Let's open the `frontend/packages/metafox/note/src/pages/HomePage/Page.tsx` file and look into some annotations at the top of file
 
 ```tsx
@@ -999,7 +1197,7 @@ class StoreNoteForm extends AbstractForm
 
 You can check all form fields supported at [MetaFox built-in fields support](https://dev-docs.metafoxapp.com/php-api/namespaces/metafox-platform-support-form-field.html)
 
-### Frontend
+### Frontend Web
 
 _Frontend_ supports built-in dynamic form builder to transform JSON-based responses into ReactJS Form element.
 
@@ -1149,6 +1347,79 @@ This annotation determines the file defines a form field component, build tool c
 
 When the form is returned by a API, form builder will detect and use this component to render elements having `"component": "textarea"` key-value pair.
 
+### Mobile
+
+Similar to Frontend, Mobile also supports a built-in dynamic form builder to transform JSON-based responses into React Native Form elements. 
+
+However, most of Mobile's Form elements are different from those in Frontend. So you can find corresponding elements in `metafox-mobile/packages/framework/metafox-form-elements`.
+
+Below is a sample Form response in JSON format:
+
+```txt
+{
+  "status": "success",
+  "data": {
+    "component": "Form",     // define React Native render component
+    "title": "Add New Note", // form title
+    "action": "note",       // target api for http request when form submit.
+    "method": "POST",        // http method for http request when form submit.
+    "value": {               // initial values.
+      "module_id": "note",
+      "privacy": 0,
+      "draft": 0,
+      "tags": [],
+      "owner_id": 0,
+      "attachments": []
+    },
+    "validation": {         // define validation object, based on https://www.npmjs.com/package/yup
+      "type": "object",
+      "properties": {
+        "title": {
+          "label": "Title",
+          "type": "string",
+          "required": true,
+          "minLength": 3,
+          "maxLength": 255,
+          "errors": {
+            "maxLength": "Title must be at most 255 characters"
+          },
+        }
+      }
+    },
+    "elements": {         // define form structure
+      "basic": {          // basic form section
+        "name": "basic",
+        "component": "Container",
+        "testid": "field basic",
+        "elements": {
+          "title": {                 // form field
+            "component": "Text",     // Define react render component to form.element.[component]
+            "maxLength": 255,
+            "margin": "normal",
+            "name": "title",
+            "required": true,
+            "label": "Title",
+            "placeholder": "Fill in a title for your note",
+            "description": "Maximum 255 of characters",
+            "testid": "field title"
+          },
+          "text": {
+            "component": "Textarea",
+            "name": "text",
+            "variant": "standard",
+            "required": true,
+            "label": "Post",
+            "multipleline": true,
+            "textAlignVertical": "top",
+            "placeholder": "Add some content to your note",
+            "testid": "field text"
+          },
+      },
+    }
+  }
+}
+```
+
 ## Validation
 
 Form supports validation both _Frontend_ and _Backend_
@@ -1183,9 +1454,13 @@ class StoreRequest extends FormRequest
 
 The main method `rules` returns an array of [validation rules](https://laravel.com/docs/9.x/validation#creating-form-requests)
 
-### Frontend
+### Frontend Web
 
 [Frontend validation](/frontend/validation) is based on [yup](https://www.npmjs.com/package/yup). _MetaFox_ dynamic form builder transforms JSON object to a `yup` validation object.
+
+### Mobile App
+
+Mobile validation is based on [yup](https://www.npmjs.com/package/yup). _MetaFox_ dynamic form builder transforms JSON object to a `yup` validation object.
 
 ## Translation
 
@@ -1262,13 +1537,13 @@ In this case, the namespace is dropped, and the translation key is `{group}.{phr
 echo __p('auth.failed'); // ouput: These credentials do not match our records.
 ```
 
-### Add Phrase
+#### Add Phrase
 
 The simplest way to add translation phrases is via AdminCP, visit **AdminCP** → **Localization** → **Phrases** → **+ Add New Phrase**
 
 Then, you can follow the _Phrase Creation Wizard_ to create a new phrase.
 
-### Frontend
+### Frontend Web
 
 MetaFox frontend provides translations feature in the `messages.json` file. It contains key/value translations as below:
 
@@ -1345,8 +1620,26 @@ To support multiple language, frontend load custom language translation using ap
   "error": null
 }
 ```
+### Mobile App
+
+Similar to Frontend, Mobile supports phrase translation using `i18n` helper:
+
+```tsx
+import { useGlobal } from "@metafox/framework";
+import React from "react";
+import { Text } from "react-native";
+
+function MyComponent() {
+  const { i18n } = useGlobal();
+
+  return <Text>{i18n.formatMessage({ id: 'value_points' }, { value: 10 })}</Text>;
+  // output: <Text>10 points</Text>
+}
+```
 
 ## Page Browsing
+
+### Frontend Web
 
 Dive deeper into `frontend/packages/company/note/src/pages/BrowseNotes/Page.tsx` file
 
@@ -1381,6 +1674,10 @@ export default createBrowseItemPage({
 `pageName`: Define layout page name
 
 `categoryName`: Define link to category resource type
+
+### Mobile App
+
+See [Route Concepts](/mobile/concepts#route) for detailed guide to set up routes on mobile app.
 
 ## Page Search
 
