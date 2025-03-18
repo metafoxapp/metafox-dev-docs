@@ -5,7 +5,7 @@ info:
   version: 1.0.0
 servers:
   -
-    url: 'http://localhost/api/v1'
+    url: 'https://demo.metafox.app/api/v1'
 paths:
   '/api/{ver}/activitypoint/conversion-request':
     get:
